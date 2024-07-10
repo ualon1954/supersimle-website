@@ -18,7 +18,7 @@ class Video {
 
  export const videos = [
   {
-    thumbnail: "thumbnails/thumbnail-1.webp",
+    thumbnail: "thumbnails/bensimon.jpg",
     title: "Talking Tech and AI with Google CEO Sundar Pichai!",
     author: "Marques Brownlee" ,
     stats: "3.4M views &#183; 6 months ago",
