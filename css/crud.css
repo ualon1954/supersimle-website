@@ -1,0 +1,41 @@
+.delete {
+    cursor: pointer;
+    color: white;
+    padding: 3px;
+    border-radius: 5px;
+    background-color: red;
+}
+
+.delete:hover {
+    color: black; 
+}
+
+/*
+.update {
+    display: none;
+    background-color: green;
+}
+*/
+.cancel {
+   /* display: none; */
+    background-color: blue;
+    color: white;
+}
+
+.edit {
+    background-color: rgb(63, 143, 143);
+    color: white;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.edit:hover {
+    color: black;
+}
+
+.contact-form {
+    display: none;
+}
+h2 {
+    text-align: center;
+}
