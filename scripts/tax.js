@@ -69,11 +69,20 @@ function calculateTax() {
             let trtd = todo.map(each=> {
             if (2024 === each[0] ) {
              
-                form[3].value = each[6];
+                form[3].value = each[6].toLocaleString(undefined, { 
+                    minimumFractionDigits: 2, 
+                    maximumFractionDigits: 2 
+                  });
                 form[4].value = each[7];
-                form[5].value = each[8];
-                form[6].value = each[4];
-                form[7].value = each[9];
+                form[5].value = each[8].toLocaleString(undefined, { 
+                    minimumFractionDigits: 2, 
+                    maximumFractionDigits: 2 
+                  });
+                form[6].value = each[4].toLocaleString('pl-PL', { style: 'percent' });
+                form[7].value = each[9].toLocaleString(undefined, { 
+                    minimumFractionDigits: 2, 
+                    maximumFractionDigits: 2 
+                  });
                 
                 //update.setAttribute("onclick",`updateData(${id})`);
                

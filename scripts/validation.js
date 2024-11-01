@@ -23,11 +23,11 @@ function AmountCheck() {
     successAmount.classList.add("show");
     amount.classList.remove("show");
   }
-  if (amount.value.length > 6) {
+  if (amount.value.length > 8) {
     successAmount.classList.remove("show");
     errorAmount.classList.add("show");
     successAmount.classList.add("show");
-    errorAmount.innerHTML = `<i class="bx bx-error-circle"></i> Please enter maximum 15 characters`;
+    errorAmount.innerHTML = `<i class="bx bx-error-circle"></i> Please enter maximum 8 characters`;
   }
 }
 
