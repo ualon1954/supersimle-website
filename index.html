@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <!--meta charset="UTF-8"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tax Calculate</title>
+    <link rel="stylesheet" type="text/css" href="css/tax.css">
+    <link rel="stylesheet" type="text/css" href="css/crud.css">
+    <!--link rel="stylesheet" type="text/css" href="css/valid.css"-->
+    <link rel="stylesheet" type="text/css" href="css/validation.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+</head>
+
+<body dir="rtl">
+  
+    
+        
+        <div class="container">
+          <form name="TaxForm"  class="tax-form">
+            <h2>חישוב מס הכנסה</h2>
+            <!-- AMOUNT  -->
+            <div class="input-box">
+              <input type="text" placeholder="נא להזין סכום הכנסה" id="amount" />
+              <!-- SUCCESS SPAN  -->
+              <span class="success amount" dir="rtl">
+                <i class="fa-sharp fa-solid fa-circle-check"></i>
+              </span>
+              <br />
+              <!-- ERROR SPAN  -->
+              <span class="error amount"></span>
+            </div>
+            <!-- REFINEMENT POINTS  -->
+            <div class="input-box">
+              <input type="rpoints" placeholder="נא להזין נקודות זיכוי" id="rpoints" />
+              <!-- SUCCESS SPAN  -->
+              <span class="success rpoints">
+                <i class="fa-sharp fa-solid fa-circle-check"></i>
+              </span>
+              <br />
+              <!-- ERROR SPAN  -->
+              <span class="error rpoints"></span>
+            </div>
+            <!-- PTOR AMOUNT  -->
+            <div class="input-box">
+              <input type="text" placeholder="פטור נוסף" id="ptor" />
+              <!-- SUCCESS SPAN  -->
+              <span class="success ptor" dir="rtl">
+                <i class="fa-sharp fa-solid fa-circle-check"></i>
+              </span>
+              <br />
+              <!-- ERROR SPAN  -->
+              <span class="error ptor"></span>
+            </div>
+            <div class="result-container">
+                <h3>תוצאת חישוב</h3>
+                <br />
+                <div class="result-box">
+                    <label for="tax">מס הכנסה:</label>
+                    <input type="text" id="tax" disabled style="color: red ;font-weight: 500;"/>
+                </div>
+                <div class="result-box">
+                    <label for="points">שווי נקודות זיכוי:</label>
+                    <input type="text" id="points" disabled style="color: green ;font-weight: 500;"/>
+                </div>
+                <div class="result-box">
+                    <label for="calctax">מס מחושב  :</label>
+                    <input type="text" id="calctax" disabled style="color: red ;font-weight: 500;"/>
+                </div>
+                <div class="result-box">
+                    <label for="shuli">מס שולי  :</label>
+                    <input type="text" id="shuli" disabled/>
+                </div>
+                <div class="result-box">
+                    <label for="neto">נטו לתשלום   :</label>
+                    <input type="text" id="neto" disabled style="color: green ;font-weight: 600;"/>
+                </div>
+            </div>
+            <!-- SUBMIT BTN  -->
+            <div class="btn">
+              <button type="update" class="update" id="update">חישוב</button>
+              <button type="reset" class="reset" id="reset" onclick="resetForm()" >ניקוי</button>
+            </div>
+            
+          </form>
+        </div>
+        
+       
+
+    <!--script src="scripts/crud.js"--></script>
+    <!--script src="scripts/script1.js"></script-->
+    <script src="scripts/tax.js"></script>
+    
+    <script src="scripts/validation.js"></script>
+
+</body>
