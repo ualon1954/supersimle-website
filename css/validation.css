@@ -19,7 +19,8 @@ body {
     height: 50px;
     display:flex;
     width: 370px;
-    margin-bottom: 300px;
+    top: 2px;
+    
     background-color: #033169;
     align-items:center;
     justify-content:center; 
@@ -33,7 +34,7 @@ body {
 
 .container {
     /*height: 100vh;*/
-    position: relative;
+    position:relative;
     margin-top: 5px;
     width: 100%;
     background: transparent;
@@ -49,7 +50,7 @@ h1 {
    font-family: sans-serif;
 }
 .container form {
-    
+   
     width: 370px;
     background-color: #fff;
     border-radius: 6px;
@@ -87,11 +88,13 @@ h1 {
 
 
 .result-container {
+  position:relative;
   font-family: 'Arial, sans-serif';  
   border-style: solid;  
   width: 85%;
   padding: 10px; 
   align-items: center;
+  justify-content: center;
   margin-right: 25px;
   background-color: blanchedalmond;
   border-color: coral;
