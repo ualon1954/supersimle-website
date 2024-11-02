@@ -15,7 +15,7 @@ body {
 
 .container {
     /*height: 100vh;*/
-    width: 100%;
+    width: 390px;
     background: transparent;
     display:flex;
     
