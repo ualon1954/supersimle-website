@@ -120,6 +120,112 @@ function resetForm () {
     
 }
 
+// 1.Open Tax Calculator
+
+const tax_btn = document.querySelector('#toTax');
+const customers_table = document.querySelector('#customers_table');
+
+
+const toTAX = function (customers_table) {
+    const html_code = `
+    <!DOCTYPE html>
+    <link rel="stylesheet" type="text/css" href="css/contacts.css">
+    <main class="table" id="customers_table">${customers_table.innerHTML}</main>`;
+
+    const new_window = window.open();
+     new_window.document.write(html_code);
+
+    setTimeout(() => {
+        new_window.print();
+        new_window.close();
+    }, 400);
+}
+
+tax_btn.onclick = () => {
+    alert("tax")
+    window.location.href = "index.html";
+    //toPDF(customers_table);
+}
+
+// 2.Open Madad Calculator
+
+const madad_btn = document.querySelector('#toMadad');
+//const customers_table = document.querySelector('#customers_table');
+
+
+const toMadad = function (customers_table) {
+    const html_code = `
+    <!DOCTYPE html>
+    <link rel="stylesheet" type="text/css" href="css/contacts.css">
+    <main class="table" id="customers_table">${customers_table.innerHTML}</main>`;
+
+    const new_window = window.open();
+     new_window.document.write(html_code);
+
+    setTimeout(() => {
+        new_window.print();
+        new_window.close();
+    }, 400);
+}
+
+madad_btn.onclick = () => {
+    alert("madad")
+    window.location.href = "madad.html";
+    //toPDF(customers_table);
+}
+
+// 3.Open Kivua Calculator
+
+const kivua_btn = document.querySelector('#toKivua');
+//const customers_table = document.querySelector('#customers_table');
+
+
+const toKivua = function (customers_table) {
+    const html_code = `
+    <!DOCTYPE html>
+    <link rel="stylesheet" type="text/css" href="css/contacts.css">
+    <main class="table" id="customers_table">${customers_table.innerHTML}</main>`;
+
+    const new_window = window.open();
+     new_window.document.write(html_code);
+
+    setTimeout(() => {
+        new_window.print();
+        new_window.close();
+    }, 400);
+}
+
+kivua_btn.onclick = () => {
+    alert("kivua")
+    //toPDF(customers_table);
+}
+
+// 4.Open Prica Calculator
+
+const prica_btn = document.querySelector('#toPrica');
+//const customers_table = document.querySelector('#customers_table');
+
+
+const tPrica = function (customers_table) {
+    const html_code = `
+    <!DOCTYPE html>
+    <link rel="stylesheet" type="text/css" href="css/contacts.css">
+    <main class="table" id="customers_table">${customers_table.innerHTML}</main>`;
+
+    const new_window = window.open();
+     new_window.document.write(html_code);
+
+    setTimeout(() => {
+        new_window.print();
+        new_window.close();
+    }, 400);
+}
+
+prica_btn.onclick = () => {
+    alert("prica")
+    //toPDF(customers_table);
+}
+
 
 
 
