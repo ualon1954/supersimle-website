@@ -11,7 +11,20 @@ body {
    /* background: url(../images/html_table.jpg) center / cover;*/
     justify-content: center;
     align-items: center;
+    font-family: sans-serif;
     
+}
+.form_header {
+    position: absolute;
+    height: 50px;
+    display:flex;
+    width: 370px;
+    margin-bottom: 300px;
+    background-color: #033169;
+    align-items:center;
+    justify-content:center; 
+    direction: ltr;
+    padding-top: 5px;
 }
 .main-container {
     align-items:center;
@@ -20,6 +33,7 @@ body {
 
 .container {
     /*height: 100vh;*/
+    position: relative;
     margin-top: 5px;
     width: 100%;
     background: transparent;
@@ -30,6 +44,9 @@ body {
     }
 h1 {
    text-align: center;
+   font-size: 20px;
+   color: white;
+   font-family: sans-serif;
 }
 .container form {
     
@@ -178,7 +195,7 @@ h1 {
 }
 
 .table__header {
-    position: fixed;
+    position: absolute;
     width: 300px;
     height:4%;
     background-color: rgba(0, 1, 7, 0.267);
@@ -186,6 +203,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+   
   
 }
 
@@ -228,11 +246,13 @@ h1 {
 }
 
 .export__file .export__file-btn {
-    margin-left: 150px;
+    margin-left: 200px;
+    align-items: center;
+    justify-items: center;
     display: inline-block;
     width: 2rem;
     height: 2rem;
-    background: #fff6 url(/images/export.png) center / 80% no-repeat;
+    background: #fff6 url(/images/hamburger-menu.png) center / 80% no-repeat;
     border-radius: 50%;
     transition: .2s ease-in-out;
 }
