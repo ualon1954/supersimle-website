@@ -5,15 +5,26 @@
     font-family: 'Trebuchet MS';
 }
 
+body {
+    margin-top: 10px;
+    /*min-height: 100vh;*/
+   /* background: url(../images/html_table.jpg) center / cover;*/
+    justify-content: center;
+    align-items: center;
+}
+
 .container {
     /*height: 100vh;*/
     width: 100%;
     background: transparent;
     display:flex;
-    /*align-items: center;*/
-    justify-content: center;
+    
+    align-items: center;
+    justify-content:center;
+    }
+h1 {
+   text-align: center;
 }
-
 .container form {
     width: 390px;
     background-color: #fff;
@@ -54,7 +65,7 @@
 .result-container {
   font-family: 'Arial, sans-serif';  
   border-style: solid;  
-  width: 88%;
+  width: 80%;
   padding: 10px; 
   align-items: center;
   margin-right: 25px;
@@ -141,14 +152,144 @@
     border: none;
     outline: none;
     border-radius: 6px;
-    background: #1bb092;
     color: #fff;
     font-size: 20px;
     justify-content: center;
     cursor: pointer;
     transition: color .3s ease-in-out;
 }
+.reset {
+    background-color: blue;
+}
+
+.update {
+    background-color: green;
+}
 
 .container form .btn button:hover {
     background-color: #0c987c;
 }
+
+.table__header {
+    width: 390px;
+    height:8%;
+    background-color: #fff4;
+    padding: .8rem 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table__header .input-group {
+    width: 35%;
+    height: 70%;
+    background-color: #fff5;
+    padding: 0 .8rem;
+    border-radius: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: .2s;
+}
+
+.table__header .input-group:hover {
+    width: 45%;
+    background-color: #fff8;
+    box-shadow: 0 .1rem .4rem #0002;
+}
+
+.table__header .input-group img {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.table__header .input-group input {
+    width: 100%;
+    padding: 0 .5rem 0 .3rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+}
+
+.export__file {
+    position: relative;
+}
+
+.export__file .export__file-btn {
+    margin-left: 150px;
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    background: #fff6 url(/images/export.png) center / 80% no-repeat;
+    border-radius: 50%;
+    transition: .2s ease-in-out;
+}
+
+.export__file .export__file-btn:hover { 
+    background-color: #fff;
+    transform: scale(1.15);
+    cursor: pointer;
+}
+
+.export__file input {
+    display: none;
+}
+
+.export__file .export__file-options {
+    position: absolute;
+    right: 0;
+    
+    width: 12rem;
+    border-radius: .5rem;
+    overflow: hidden;
+    text-align: center;
+
+    opacity: 0;
+    transform: scale(.8);
+    transform-origin: top right;
+    
+    box-shadow: 0 .2rem .5rem #0004;
+    
+    transition: .2s;
+}
+
+.export__file input:checked + .export__file-options {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 100;
+}
+
+.export__file .export__file-options label{
+    display: block;
+    width: 100%;
+    padding: .6rem 0;
+    background-color: #f2f2f2;
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    transition: .2s ease-in-out;
+}
+
+.export__file .export__file-options label:first-of-type{
+    padding: 1rem 0;
+    background-color: #86e49d !important;
+}
+
+.export__file .export__file-options label:hover{
+    transform: scale(1.05);
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.export__file .export__file-options img{
+    width: 2rem;
+    height: auto;
+}
+
+
