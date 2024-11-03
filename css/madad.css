@@ -60,12 +60,12 @@ h1 {
 
 .container form h4 {
     font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     padding: 0 15px;
     color: rgba(0, 0, 0, 0.9);
     margin-bottom: 20px;
     font-weight: 600;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .container form .input-box {
@@ -90,7 +90,7 @@ h1 {
 
 .result-container {
   position:relative;
-  font-family: Arial, Helvetica, sans-serif;  
+  font-family: 'Arial, sans-serif';  
   border-style: solid;  
   width: 85%;
   padding: 10px; 
@@ -107,7 +107,14 @@ h1 {
     border-style: none;
     width: 90px;
     background-color: transparent;
-}
+  }
+
+  .result-container .result-box label {
+    border-style: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
+    background-color: transparent;
+  }  
 
 .container form .input-box input:last-child {
     margin-bottom: 0;
@@ -281,6 +288,7 @@ h1 {
     border-radius: .5rem;
     overflow: hidden;
     text-align: right;
+    
 
     opacity: 0;
     transform: scale(.8);
@@ -312,13 +320,13 @@ h1 {
 
     transition: .2s ease-in-out;
 }
-
 /*
 .export__file .export__file-options label:first-of-type{
     padding: 1rem 0;
     background-color: #86e49d !important;
 }
 */
+
 .export__file .export__file-options label:hover{
     transform: scale(1.05);
     background-color: #fff;
