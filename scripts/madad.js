@@ -8,20 +8,67 @@ let update = document.querySelector(".update");
 let tbody = document.querySelector("tbody");
 let tbody_rows = '';
 let show_flag = 0;
-
-
-
+let lamount = document.querySelector('label[for="tax"]');  //does nothing
 
    function updateData() {
-    //alert("update");
-    let prifileUrl = '';
-    if (form[3].value === "") {
-        prifileUrl = "images/anonim.jpg";
-    }else{
-        prifileUrl =  form[3].value ;
+    let fromYear = new Date(form[1].value).getFullYear();
+    let toYear = new Date(form[2].value).getFullYear();
+    let fromMonth = new Date(form[1].value).getMonth()+1;
+    let toMonth = new Date(form[2].value).getMonth()+1;
+    let fromDay = new Date(form[1].value).getDate();
+    let toDay = new Date(form[2].value).getDate();
+    //let toYear = toDate.getFullYear();
+    //let fromDay = fromDate.getMonth();
+    //let toDay = toDate.getMonth();
+    //let fromMonth = fromDate.getDay();
+    //let toMonth = toDate.getDay();
+
+    if (fromMonth === 2 && fromDay < 16) {
+        fromYear = fromYear - 1;
+        fromMonth = 12; 
+
+    }  else if(fromMonth === 2 && fromDay > 15) {
+        fromMonth =  1;
+
+    }  else if(fromMonth === 1 && fromDay < 16) {
+        fromYear = fromYear - 1;
+        fromMonth = 11;
+
+    }  else if(fromMonth === 1 && fromDay > 15 ) {
+        fromYear = fromYear - 1;
+        fromMonth = 12;
+
+    }   else if(fromMonth > 2 && fromDay < 16) {
+        fromMonth = fromMonth - 2;
+    } else if(fromMonth > 2 && fromDay > 15) { 
+        fromMonth = fromMonth - 1;
     }
+      
+       
+    if (toMonth === 2 && toDay < 16) {
+        toYear = toYear - 1;
+        fromMonth = 12; 
+
+    }  else if(toMonth === 2 && toDay > 15) {
+        toMonth =  1;
+
+    }  else if(toMonth === 1 && toDay < 16) {
+        toYear = toYear - 1;
+        toMonth = 11;
+
+    }  else if(toMonth === 1 && toDay > 15 ) {
+        toYear = toYear - 1;
+        toMonth = 12;
+
+    }   else if(toMonth > 2 && toDay < 16) {
+        toMonth = toMonth - 2;
+    } else if(toMonth > 2 && toDay > 15) { 
+        toMonth = toMonth - 1;
+    }
+ 
+    //alert(fromYear,toDate);
     document.querySelector(".update").innerHTML = "מחשב..."
-    fetch(api+`?updatetax=true&id=2&amount=${form[0].value}&rpoints=${form[1].value}&ptor=${form[2].value}`)
+    fetch(api+`?updatemadad=true&id=2&amount=${form[0].value}&fromdate=${form[1].value}&todate=${form[2].value}&fromyear=${fromYear}&toyear=${toYear}&frommonth=${fromMonth}&tomonth=${toMonth}`)
     //fetch(api+`?update=true&id=${id}&data=${form[1].value}`)
     .then(res => res.text())
     .then(data=> {
@@ -40,7 +87,7 @@ let show_flag = 0;
     
 } 
 
-function calculateTax() {
+function calculateMadad() {
     //document.querySelectorAll('tbody tr').forEach(tr => tr.classList.remove('active'));
    //    table_rows.forEach(row => {
   //       row.querySelectorAll('tbody tr').classList.add('active');
@@ -61,28 +108,40 @@ function calculateTax() {
         //resetForm();
     // add.style.display="none"
         //update.style.display="unset"
-        fetch(api+`?readtax=true&id=1`)
+        fetch(api+`?readmadad=true&id=2`)
         .then(res=>res.json())
         .then(data=> {
             let todo = data.todo;
             //console.log(todo);
             let trtd = todo.map(each=> {
+            alert(each[0]);    
             if (1 === each[0] ) {
              
-                form[3].value = each[6].toLocaleString(undefined, { 
+                form[3].value = each[1].toLocaleString(undefined, { 
                     minimumFractionDigits: 2, 
                     maximumFractionDigits: 2 
                   });
-                form[4].value = each[7];
-                form[5].value = each[8].toLocaleString(undefined, { 
+                  form[4].value = each[16].toLocaleString(undefined, { 
                     minimumFractionDigits: 2, 
                     maximumFractionDigits: 2 
                   });
-                form[6].value = each[4].toLocaleString('pl-PL', { style: 'percent' });
-                form[7].value = each[9].toLocaleString(undefined, { 
+
+                form[5].value = each[12].toLocaleString(undefined, { 
+                    minimumFractionDigits: 1, 
+                    maximumFractionDigits: 1 
+                  });
+                  form[6].value = each[13].toLocaleString(undefined, { 
+                    minimumFractionDigits: 1, 
+                    maximumFractionDigits: 1 
+                  }); 
+                  form[7].value = each[14].toLocaleString(undefined, { 
+                    minimumFractionDigits: 4, 
+                    maximumFractionDigits: 4 
+                  }); 
+                  form[8].value = each[15].toLocaleString(undefined, { 
                     minimumFractionDigits: 2, 
                     maximumFractionDigits: 2 
-                  });
+                  }); 
                 
                 //update.setAttribute("onclick",`updateData(${id})`);
                
@@ -141,7 +200,13 @@ const toTAX = function (customers_table) {
     }, 400);
 }
 
-// 1.Open Madad Calculator
+tax_btn.onclick = () => {
+    //alert("tax")
+    window.location.href = "index.html";
+    //toPDF(customers_table);
+}
+
+// 2.Open Madad Calculator
 
 const madad_btn = document.querySelector('#toMadad');
 //const customers_table = document.querySelector('#customers_table');
@@ -163,12 +228,12 @@ const toMadad = function (customers_table) {
 }
 
 madad_btn.onclick = () => {
-    //alert("madad")
+    alert("madad")
     window.location.href = "madad.html";
     //toPDF(customers_table);
 }
 
-// 2.Open Kivua Calculator
+// 3.Open Kivua Calculator
 
 const kivua_btn = document.querySelector('#toKivua');
 //const customers_table = document.querySelector('#customers_table');
@@ -194,7 +259,7 @@ kivua_btn.onclick = () => {
     //toPDF(customers_table);
 }
 
-// 3.Open Prica Calculator
+// 4.Open Prica Calculator
 
 const prica_btn = document.querySelector('#toPrica');
 //const customers_table = document.querySelector('#customers_table');
