@@ -255,7 +255,7 @@ const toKivua = function (customers_table) {
 }
 
 //kivua_btn.onclick = () => {
-    alert("kivua")
+ //   alert("kivua")
     //toPDF(customers_table);
 //}
 
