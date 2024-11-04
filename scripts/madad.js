@@ -114,7 +114,7 @@ function calculateMadad() {
             let todo = data.todo;
             //console.log(todo);
             let trtd = todo.map(each=> {
-            alert(each[0]);    
+            //alert(each[0]);    
             if (1 === each[0] ) {
              
                 form[3].value = each[1].toLocaleString(undefined, { 
