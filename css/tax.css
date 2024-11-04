@@ -81,6 +81,7 @@ h1 {
     font-size: 18px;
     padding-right: 10px;
     margin-bottom: 8px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 600;
     color: rgba(0, 0, 0, 0.6);
     border: 1px solid rgba(0, 0, 0, 0.3);
@@ -177,6 +178,7 @@ h1 {
 }
 
 .container form .btn button {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     height: 30px;
     width: 100%;
     border: none;
