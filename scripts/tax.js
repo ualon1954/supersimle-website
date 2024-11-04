@@ -189,10 +189,10 @@ const toKivua = function (customers_table) {
     }, 400);
 }
 
-kivua_btn.onclick = () => {
-    alert("kivua")
+//kivua_btn.onclick = () => {
+//    alert("kivua")
     //toPDF(customers_table);
-}
+//}
 
 // 3.Open Prica Calculator
 
@@ -215,10 +215,10 @@ const tPrica = function (customers_table) {
     }, 400);
 }
 
-prica_btn.onclick = () => {
-    alert("prica")
+//prica_btn.onclick = () => {
+//    alert("prica")
     //toPDF(customers_table);
-}
+//}
 
 
 
