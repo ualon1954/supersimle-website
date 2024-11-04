@@ -1,68 +1,333 @@
-/*
-Responsive HTML Table With Pure CSS - Web Design/UI Design
-
-Code written by:
-👨🏻‍⚕️ Coding Design (Jeet Saru)
-
-> You can do whatever you want with the code. However if you love my content, you can **SUBSCRIBED** my YouTube Channel.
-
-🌎link: www.youtube.com/codingdesign 
-*/
-
 * {
     margin: 0;
     padding: 0;
-
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Trebuchet MS';
 }
-@media print {
- .table, .table__body {
-  overflow: visible;
-  height: auto !important;
-  width: auto !important;
- }
-}
-
-/*@page {
-    size: landscape;
-    margin: 0; 
-}*/
 
 body {
     margin-top: 10px;
-    min-height: 100vh;
-    background: url(../images/html_table.jpg) center / cover;
+    /*min-height: 100vh;*/
+   /* background: url(../images/html_table.jpg) center / cover;*/
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    
+}
+.form_header {
+    position: absolute;
+    height: 50px;
+    display:flex;
+    width: 350px;
+    top: 2px;
+    
+    background-color: #033169;
+    align-items:center;
+    justify-content:center; 
+    direction: ltr;
+    padding-top: 5px;
+}
+.main-container {
+    align-items:center;
+    justify-content:center; 
+}
+
+.container {
+    /*height: 100vh;*/
+    position:relative;
+    margin-top: 5px;
+    width: 100%;
+    background: transparent;
+    display:inline-flex;
+       
+    align-items:center;
+    justify-content:center;
+    }
+h1 {
+   text-align: center;
+   font-size: 20px;
+   color: white;
+   font-family: sans-serif;
+}
+.container form {
+   
+    width: 350px;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 30px 0;
+    box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.3);
+ }
+
+.container form h4 {
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    padding: 0 15px;
+    color: rgba(0, 0, 0, 0.9);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.container form .input-box {
+    margin-bottom: 8px;
+    padding: 0 25px;
+    width: 100%;
+    position: relative;
+}
+
+.container form .input-box input {
+    width: 100%;
+    height: 35px;
+    font-size: 18px;
+    padding-right: 10px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+}
+
+
+.result-container {
+  position:relative;
+  font-family: Arial, Helvetica, sans-serif;  
+  border-style: solid;  
+  width: 85%;
+  padding: 10px; 
+  align-items: center;
+  justify-content: center;
+  margin-right: 25px;
+  background-color: blanchedalmond;
+  border-color: coral;
+  
+  display: none;
+}
+
+.result-container .result-box input {
+    border-style: none;
+    width: 90px;
+    background-color: transparent;
+}
+
+.container form .input-box input:last-child {
+    margin-bottom: 0;
+}
+
+.container form .input-box input:focus {
+    outline: 1px solid #51eecf;
+}
+
+.container form .input-box input.show {
+    border-color: red;
+}
+
+.container form .input-box input.show:focus {
+    outline-color: red;
+}
+
+.container form .input-box input::placeholder {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.container form .input-box .success {
+    position: absolute;
+    font-size: 17px;
+    left: 35px;
+    top: 14px;
+    color: #0c987c;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.container form .input-box .success.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.container form .input-box .error {
+    color: red;
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: 500;
+    display: none;
+}
+
+.container form .input-box .error.show {
+    display: block;
+}
+
+.container form .input-box .eye {
+    position: absolute;
+    font-size: 17px;
+    right: 35px;
+    top: 14px;
+    color: #000;
+    cursor: pointer;
+}
+
+.container form .btn {
+    padding: 0 25px;
+    margin-top: 20px;
+    width: 80%;
+    display: flex;
+    gap: 5px;
+    
+    
+}
+
+.container form .btn button {
+    height: 30px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 20px;
+    justify-content: center;
+    cursor: pointer;
+    transition: color .3s ease-in-out;
+}
+.reset {
+    background-color: blue;
+}
+
+.update {
+    background-color: green;
+}
+
+.container form .btn button:hover {
+    background-color: #0c987c;
+}
+
+.table__header {
+    position: absolute;
+    width: 300px;
+    height:4%;
+    background-color: rgba(0, 1, 7, 0.267);
+    padding: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-form {
-    margin-right: 55px;
-    margin-top: 10px;
-  }
-form input {
-    font-size: 1em;
-}
-
-@media (max-width: 1000px) {
-    td:not(:first-of-type) {
-        min-width: 12.1rem;
-    }
-}
-
-.add {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    display: inline-flex;
-}
-.add:hover {
-    background-color: #0056b3;
-}
    
+  
+}
+
+.table__header .input-group {
+    width: 35%;
+    height: 70%;
+    background-color: #fff5;
+    padding: 0 .2rem;
+    border-radius: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: .2s;
+}
+
+.table__header .input-group:hover {
+    width: 45%;
+    background-color: #fff8;
+    box-shadow: 0 .1rem .4rem #0002;
+}
+
+.table__header .input-group img {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.table__header .input-group input {
+    width: 100%;
+    padding: 0 .5rem 0 .3rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+}
+
+.export__file {
+    position: relative;
+}
+
+.export__file .export__file-btn {
+    margin-left: 200px;
+    align-items: center;
+    justify-items: center;
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    background: #fff6 url(/images/hamburger-menu.png) center / 80% no-repeat;
+    border-radius: 50%;
+    transition: .2s ease-in-out;
+}
+
+.export__file .export__file-btn:hover { 
+    background-color: #fff;
+    transform: scale(1.15);
+    cursor: pointer;
+}
+
+.export__file input {
+    display: none;
+}
+
+.export__file .export__file-options {
+    position: absolute;
+    right: 0;
+    
+    width: 12rem;
+    border-radius: .5rem;
+    overflow: hidden;
+    text-align: right;
+
+    opacity: 0;
+    transform: scale(.8);
+    transform-origin: top right;
+    
+    box-shadow: 0 .2rem .5rem #0004;
+    
+    transition: .2s;
+}
+
+.export__file input:checked + .export__file-options {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 100;
+}
+
+.export__file .export__file-options label{
+    display: block;
+    width: 100%;
+    padding: .6rem 0;
+    color: rgb(0, 0, 1);
+    background-color: #f2f2f2;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    
+    display: flex;
+    justify-content: space-around;
+    align-items:first baseline;
+    text-align: right;
+
+    transition: .2s ease-in-out;
+}
+
+/*
+.export__file .export__file-options label:first-of-type{
+    padding: 1rem 0;
+    background-color: #86e49d !important;
+}
+*/
+.export__file .export__file-options label:hover{
+    transform: scale(1.05);
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.export__file .export__file-options img{
+    width: 2rem;
+    height: auto;
+}
+
+
