@@ -42,6 +42,7 @@
             <h4>חישוב הצמדה למדד</h4>
             <!-- AMOUNT  -->
             <div class="input-box">
+              <label for="amount">סכום</label>
               <input type="text" placeholder="נא להזין סכום הצמדה" id="amount" />
               <!-- SUCCESS SPAN  -->
               <span class="success amount" dir="rtl">
@@ -53,7 +54,8 @@
             </div>
             <!-- FROM DATE  -->
             <div class="input-box">
-              <input type="date" id="fromdate" />
+              <label for="fromdate">מתאריך</label>
+              <input type="date" class="date"  id="fromdate"/>
               <!-- SUCCESS SPAN  -->
               <span class="success fromdate">
                 <i class="fa-sharp fa-solid fa-circle-check"></i>
@@ -64,7 +66,8 @@
             </div>
             <!-- TO DATE  -->
             <div class="input-box">
-              <input type="date" id="todate" />
+              <label for="todate">עד תאריך</label>
+              <input type="date" class="date"  id="todate" />
               <!-- SUCCESS SPAN  -->
               <span class="success todate">
                 <i class="fa-sharp fa-solid fa-circle-check"></i>
