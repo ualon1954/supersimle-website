@@ -51,7 +51,7 @@ h1 {
 }
 .container form {
    
-    width: 370px;
+    width: 350px;
     background-color: #fff;
     border-radius: 6px;
     padding: 30px 0;
@@ -76,6 +76,7 @@ h1 {
 }
 
 .container form .input-box label{
+    position: relative;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 18px;
     margin-right:10px;
@@ -363,9 +364,10 @@ h1 {
     */
 
     input[type="date"] {
+      
         height: 35px;
-         width:100%;
         font-weight: 400;
+        width: 100%;
     }
 /*
 input[type="date"] {
