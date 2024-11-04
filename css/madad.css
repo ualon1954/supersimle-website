@@ -364,6 +364,7 @@ h1 {
 
     input[type="date"] {
         height: 35px;
+         width:100%;
         font-weight: 400;
     }
 /*
