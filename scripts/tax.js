@@ -1,6 +1,6 @@
 /* CRUD for contacts */
 
-let api = "https://script.google.com/macros/s/AKfycbxrm762qSBAtHNecqhppolhdzYx5XXAoNMgkrvL9UmYjBWBy7i-DlvnCZkQvVOLn7zP/exec";
+let api = "https://script.google.com/macros/s/AKfycbwkSmW1_mZ_cq8XMf2v9Sjp_CBDILWeB93NWs38Smp-D9GN5btjoq4AaRj54QjYrs_K/exec";
 let form = document.querySelector("form");
 console.log(form);
 let add = document.querySelector(".add");
@@ -189,10 +189,10 @@ const toKivua = function (customers_table) {
     }, 400);
 }
 
-//kivua_btn.onclick = () => {
+kivua_btn.onclick = () => {
 //    alert("kivua")
-    //toPDF(customers_table);
-//}
+window.location.href = "kivua.html";
+}
 
 // 3.Open Prica Calculator
 
