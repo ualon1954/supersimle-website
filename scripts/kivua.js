@@ -13,8 +13,7 @@ let lamount = document.querySelector('label[for="tax"]');  //does nothing
    function updateData() {
      
      document.querySelector(".update").innerHTML = "מחשב..."
-     alert("1");
-    fetch(api+`?updatekivua=true&id=2&startdate=${form[0].value}&enddate=${form[1].value}&maanak=${form[2].value}&madaddate=${form[3].value}&hivun=${form[4].value}&hivun190=${form[5].value}`)
+     fetch(api+`?updatekivua=true&id=2&startdate=${form[0].value}&enddate=${form[1].value}&maanak=${form[2].value}&madaddate=${form[3].value}&hivun=${form[4].value}&hivun190=${form[5].value}`)
     //fetch(api+`?update=true&id=${id}&data=${form[1].value}`)
     .then(res => res.text())
     .then(data=> {
@@ -28,7 +27,7 @@ let lamount = document.querySelector('label[for="tax"]');  //does nothing
        //document.querySelector(".update").innerHTML = "Update"
        //document.querySelector(".contact-form").style.display = "none"; 
         //document.querySelector(".update").innerHTML = "חישוב"
-        document.querySelector(".result-container").style.display = "block";
+        //document.querySelector(".result-container").style.display = "block";
     })
     
 } 
@@ -100,7 +99,7 @@ function updateDataMadad() {
        //document.querySelector(".update").innerHTML = "Update"
        //document.querySelector(".contact-form").style.display = "none"; 
        // document.querySelector(".update").innerHTML = "חישוב"
-        document.querySelector(".result-container").style.display = "block";
+       //document.querySelector(".result-container").style.display = "block";
     })
     
 } 
@@ -153,7 +152,7 @@ function calculateKivua() {
                 }
             })
         })
-        
+       document.querySelector(".result-container").style.display = "block"; 
        document.querySelector(".update").innerHTML = "חישוב"
    }
 
