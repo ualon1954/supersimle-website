@@ -1,0 +1,176 @@
+<html>
+
+<head>
+    <!--meta charset="UTF-8"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Madad Calculate</title>
+    <!--link rel="stylesheet" type="text/css" href="css/tax.css"-->
+    <!--link rel="stylesheet" type="text/css" href="css/crud.css"-->
+    <!--link rel="stylesheet" type="text/css" href="css/valid.css"-->
+    <link rel="stylesheet" type="text/css" href="css/kivua.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+</head>
+
+<body dir="rtl">
+  <main class="main-container">
+    
+        <div class="container">
+          <section class="form_header" dir="rtl">
+
+            <h1>מחשבונים</h1>
+            
+            <div class="export__file">
+                <label for="export-file" class="export__file-btn" title="Export File"></label>
+                <input type="checkbox" id="export-file">
+                <div class="export__file-options">
+                    <!--label>מחשבונים</label-->
+                    <label for="export-file" id="toTax"s>מס הכנסה <img src="images/calculator.png" alt=""></label>
+                    <label for="export-file" id="toMadad">מדד לצרכן <img src="images/madad.png" alt=""></label->
+                    <!--label for="export-file" id="toKivua">קיבוע זכויות <img src="images/calculator.png" alt=""></label-->
+                    <!--label for="export-file" id="toPrica">פריסת פיצוים <img src="images/calculator.png" alt=""></label-->
+                </div>
+               
+            </div>
+          </section> 
+          
+          <form name="TaxForm"  class="tax-form">
+            <br /><br />
+            <h4>קיבוע זכויות</h4>
+            <!-- SRART DATE  -->
+            <div class="input-box">
+              <label for="startdate">תחילת עבודה</label>
+              <input type="date" class="date"  id="startdate"/>
+              <!-- SUCCESS SPAN  -->
+              <span class="success startdate">
+                <i class="fa-sharp fa-solid fa-circle-check"></i>
+              </span>
+              <br />
+              <!-- ERROR SPAN  -->
+              <span class="error startdate"></span>
+            </div>
+
+            <!-- END DATE  -->
+            <div class="input-box">
+              <label for="enddate">סיום עבודה</label>
+              <input type="date" class="date"  id="enddate" />
+              <!-- SUCCESS SPAN  -->
+              <span class="success enddate">
+                <i class="fa-sharp fa-solid fa-circle-check"></i>
+              </span>
+              <br />
+              <!-- ERROR SPAN  -->
+              <span class="error enddate"></span>
+            </div>
+
+            <!-- MAANAK  -->
+            <div class="input-box">
+              <label for="amount">מענק פטור</label>
+              <input type="text" placeholder="נא להזין סכום מענק פטור" id="amount" />
+              <!-- SUCCESS SPAN  -->
+              <span class="success amount" dir="rtl" style="margin-top: 17px;">
+                <i class="fa-sharp fa-solid fa-circle-check"></i>
+              </span>
+              <br />
+              <!-- ERROR SPAN  -->
+              <span class="error amount"></span>
+            </div>
+
+            <!-- MADAD DATE -->
+            <div class="input-box">
+              <label for="madaddate">תאריך הצמדה</label>
+              <input type="date" class="date"  id="madaddate" />
+              <!-- SUCCESS SPAN  -->
+              <span class="success madaddate">
+                <i class="fa-sharp fa-solid fa-circle-check"></i>
+              </span>
+              <br />
+              <!-- ERROR SPAN  -->
+              <span class="error madaddate"></span>
+            </div>
+            <div class="input-box">
+              <label for="hivun">סכום ההיוון</label>
+                <input type="text" placeholder="נא להזין סכום ההיוון" id="huvun" />
+                <!-- SUCCESS SPAN  -->
+                <span class="success hivun" dir="rtl" style="margin-top: 17px;">
+                  <i class="fa-sharp fa-solid fa-circle-check"></i>
+                </span>
+                <br />
+                <!-- ERROR SPAN  -->
+                <span class="error hivun"></span>
+             </div>  
+            <div class="input-box">
+              <div>
+                <label for="hivun190">היוונים שבוצעו לפני תיקון 190</label>
+                <input type="text" placeholder="נא להזין סכום ההיוון שבוע" id="hivun190" />
+                <!-- SUCCESS SPAN  -->
+                <span class="success hivun190" dir="rtl" style="margin-top: 17px;">
+                  <i class="fa-sharp fa-solid fa-circle-check"></i>
+                </span>
+                <br />
+                <!-- ERROR SPAN  -->
+                <span class="error hivun190"></span>
+              </div>
+            </div>
+            <div class="result-container">
+                <h3>תוצאת חישוב</h3>
+                <br />
+                <div class="result-box">
+                    <label for="row1">1. סכום ההון הפטור</label>
+                    <input type="text" id="row1" disabled style="color: green ;font-weight: 600;"/>
+                </div>
+             
+                <div class="result-box">
+                    <label for="row2">2. סכום הקטנת ההון עקב קבלת המענקים הפטורים</label>
+                    <input type="text" id="row2" disabled style="color: red ;font-weight: 600"/>
+                </div>
+                <div class="result-box">
+                  <label for="row3">3. היוונים פטורים שבוצעו לפני תיקון 190</label>
+                  <input type="text" id="row3" disabled style="color: red ;font-weight: 600;"/>
+                </div>
+                <div class="result-box">
+                  <label for="row4">4. יתרת ההון הפטורה</label>
+                  <input type="text" id="row4" disabled style="color: green ;font-weight: 600;"/>
+                </div>
+                <div class="result-box">
+                  <label for="row4">5. כום ההיוון הפטור של הקצבה כמבוקש על ידך</label>
+                  <input type="text" id="row5" disabled style="color: red ;font-weight: 600;"/>
+                </div> 
+                <div class="result-box">
+                  <label for="row4">6. יתרת ההון הפטורה לקצבה</label>
+                  <input type="text" id="row6" disabled style="color: green ;font-weight: 600;"/>
+                </div> 
+                <div class="result-box">
+                  <label for="row7">7. סכום הקצבה הפטור לחודש</label>
+                  <input type="text" id="row7" disabled style="color: green ;font-weight: 600;"/>
+                </div>   
+                <div class="result-box">
+                  <label for="row8">8. תקרת הקצבה המזכה</label>
+                  <input type="text" id="row8" disabled style="color: black ;font-weight: 600;"/>
+                </div> 
+                <div class="result-box">
+                  <label for="row9">9. שיעור הפטור מתקרת הקצבה המזכה</label>
+                  <input type="text" id="row9" disabled style="color: black ;font-weight: 600;"/>
+                </div>             
+            </div>
+            <!-- SUBMIT BTN  -->
+            <div class="btn">
+              <button type="update" class="update" id="update">חישוב</button>
+              <button type="clear" class="reset" id="reset" onclick="resetForm()" >ניקוי</button>
+            </div>
+            
+          </form>
+        </div>
+      </main>
+       
+
+    <!--script src="scripts/crud.js"--></script>
+    <!--script src="scripts/script1.js"></script-->
+    <script src="scripts/kivua.js"></script>
+    
+    <script src="scripts/validation_kivua.js"></script>
+
+</body>
