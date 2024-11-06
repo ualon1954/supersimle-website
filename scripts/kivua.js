@@ -27,9 +27,9 @@ let lamount = document.querySelector('label[for="tax"]');  //does nothing
 function updateDataMadad() {
     //document.querySelector(".update").innerHTML = "מחשב..."
     let fromYear = new Date(form[3].value).getFullYear();
-    let toYear = new Date("01-01-2024").getFullYear();
+    let toYear = new Date("01.01.2024").getFullYear();
     let fromMonth = new Date(form[3].value).getMonth()+1;
-    let toMonth = new Date("01-01-2024").getMonth()+1;
+    let toMonth = new Date("01.01.2024").getMonth()+1;
     let fromDay = new Date(form[3].value).getDate();
     let toDay = new Date("01-01-2024").getDate();
     alert(toYear);
