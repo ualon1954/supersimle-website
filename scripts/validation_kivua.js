@@ -52,11 +52,13 @@ form1.addEventListener("submit", (e) => {
   if (isValid) {
     //alert("addData");
     updateData();
-    setTimeout(() => {
-      console.log("Delayed for 2 second.");
-    }, "2000");
     updateDataMadad();
     calculateKivua();
+    //setTimeout(() => {
+    //  console.log("Delayed for 2 second.");
+   // }, "2000");
+   // updateDataMadad();
+    //calculateKivua();
     //updateData();
     //addData();
     //show_flag = 0;

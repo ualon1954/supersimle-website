@@ -16,24 +16,16 @@ let lamount = document.querySelector('label[for="tax"]');  //does nothing
      fetch(api+`?updatekivua=true&id=2&startdate=${form[0].value}&enddate=${form[1].value}&maanak=${form[2].value}&madaddate=${form[3].value}&hivun=${form[4].value}&hivun190=${form[5].value}`)
     //fetch(api+`?update=true&id=${id}&data=${form[1].value}`)
     .then(res => res.text())
-    .then(data=> {
-        //readData()
-       // alert(data)
-        //contactForm.reset()
-        //document.querySelector(".update").value = "Update"
-        //add.style.display="unset"
-        //update.style.display="none"
-       //document.querySelector('#cancel').innerHTML="Clear";
-       //document.querySelector(".update").innerHTML = "Update"
-       //document.querySelector(".contact-form").style.display = "none"; 
-        //document.querySelector(".update").innerHTML = "חישוב"
+    .then(data=> { 
+
+     //document.querySelector(".update").innerHTML = "חישוב"
         //document.querySelector(".result-container").style.display = "block";
     })
-    
+   
 } 
 
 function updateDataMadad() {
-     document.querySelector(".update").innerHTML = "מחשב..."
+    //document.querySelector(".update").innerHTML = "מחשב..."
     let fromYear = new Date(form[3].value).getFullYear();
     let toYear = new Date('01-01-2024').getFullYear();
     let fromMonth = new Date(form[3].value).getMonth()+1;
@@ -89,23 +81,13 @@ function updateDataMadad() {
     //fetch(api+`?update=true&id=${id}&data=${form[1].value}`)
     .then(res => res.text())
     .then(data=> {
-        //readData()
-       // alert(data)
-        //contactForm.reset()
-        //document.querySelector(".update").value = "Update"
-        //add.style.display="unset"
-        //update.style.display="none"
-       //document.querySelector('#cancel').innerHTML="Clear";
-       //document.querySelector(".update").innerHTML = "Update"
-       //document.querySelector(".contact-form").style.display = "none"; 
-       // document.querySelector(".update").innerHTML = "חישוב"
-       //document.querySelector(".result-container").style.display = "block";
+       //document.querySelector(".update").innerHTML = "חישוב"
     })
-    
+  
 } 
 
 function calculateKivua() {
-     document.querySelector(".update").innerHTML = "מחשב..."
+     //document.querySelector(".update").innerHTML = "מחשב..."
     document.querySelector(".result-container").style.display = "none";
          fetch(api+`?readkivua=true&id=2`)
         .then(res=>res.json())
@@ -120,7 +102,7 @@ function calculateKivua() {
                     minimumFractionDigits: 0, 
                     maximumFractionDigits: 0 
                   });
-                form[7].value = each[12].toLocaleString(undefined, { 
+                form[7].value = each[31].toLocaleString(undefined, { 
                     minimumFractionDigits: 0, 
                     maximumFractionDigits: 0 
                   });;
@@ -151,9 +133,11 @@ function calculateKivua() {
                 form[14].value = each[17].toLocaleString('pl-PL', { style: 'percent' });
                 }
             })
+            document.querySelector(".result-container").style.display = "block";
+            document.querySelector(".update").innerHTML = "חישוב"
         })
-       document.querySelector(".result-container").style.display = "block"; 
-       document.querySelector(".update").innerHTML = "חישוב"
+        
+      
    }
 
 function resetForm () {
