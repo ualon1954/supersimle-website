@@ -45,7 +45,7 @@ body {
     }
 h1 {
    text-align: center;
-   font-size: 14px;
+   font-size: 16px;
    color: white;
    font-family: sans-serif;
 }
@@ -399,16 +399,16 @@ h1 {
       }
       @media screen and (max-width: 750px) and (min-width: 480px){
         .container form {
-          width: 280px;
+          width: 350px;
         }
         .result-container .result-box input {
-            width: 90px;  
+            width: 200px;  
           }
         .result-container .result-box label{
             width: 200px;  
         }
         .form_header {
-          width: 200px;
+          width: 300px;
         }
       } 
       
