@@ -380,7 +380,7 @@ h1 {
     }
 
 
-    @media screen and (max-width: 3000px) and (min-width: 750px) {
+    @media screen and (max-width: 3000px) and (min-width: 1000px) {
         .container form {
           width: 480px;
           
@@ -391,13 +391,13 @@ h1 {
         
         .result-container .result-box input {
             
-            width: 150px;  
+            width: 80px;  
           }
         .form_header {
           width: 480px;
         }
       }
-      @media screen and (max-width: 750px) and (min-width: 480px){
+      @media screen and (max-width: 1000px) and (min-width: 480px){
         .container form {
           width: 350px;
         }
