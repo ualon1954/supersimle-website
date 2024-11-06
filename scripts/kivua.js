@@ -33,6 +33,7 @@ function updateDataMadad() {
     let fromDay = new Date(form[3].value).getDate();
     let toDay = new Date("jan 1, 2024").getDate();
     alert(toYear);
+    
     if (fromMonth === 2 && fromDay < 16) {
         fromYear = fromYear - 1;
         fromMonth = 12; 
