@@ -113,14 +113,14 @@ h1 {
 
 .result-container .result-box input {
     border-style: none;
-    width: 90px;
+    width: 80px;
     background-color: transparent;
   }
 
   .result-container .result-box label {
     border-style: none;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: 600;
+    font-weight: 500;
     background-color: transparent;
   }  
 
@@ -369,6 +369,38 @@ h1 {
         font-weight: 400;
         width: 100%;
     }
+
+    @media screen and (max-width: 3000px) and (min-width: 750px) {
+        .container form {
+          width: 480px;
+          
+        }
+        .result-container .result-box label{
+          width: 320px;  
+        }
+        
+        .result-container .result-box input {
+            
+            width: 70px;  
+          }
+        .form_header {
+          width: 480px;
+        }
+      }
+      @media screen and (max-width: 750px) and (min-width: 480px){
+        .container form {
+          width: 350px;
+        }
+        .result-container .result-box input {
+            width: 90px;  
+          }
+        .result-container .result-box label{
+            width: 200px;  
+        }
+        .form_header {
+          width: 320px;
+        }
+      } 
 /*
 input[type="date"] {
     min-width:95.6%;
