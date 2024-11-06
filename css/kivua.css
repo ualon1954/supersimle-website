@@ -96,6 +96,7 @@ h1 {
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 6px;
     background-color: transparent;
+    row-gap: 10px;
 }
 
 .result-container {
@@ -407,7 +408,7 @@ h1 {
             width: 200px;  
         }
         .form_header {
-          width: 350px;
+          width: 330px;
         }
       }    
       @media screen and (max-width: 575px) {
@@ -416,7 +417,7 @@ h1 {
           
         }
         .form_header {
-          width: 350px;
+          width: 330px;
         }
       }   
       @media screen and (max-width: 480px) {
@@ -425,7 +426,7 @@ h1 {
           
         }
         .form_header {
-          width: 350px;
+          width: 330px;
         }
       }  
       
