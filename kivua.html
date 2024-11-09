@@ -4,7 +4,7 @@
     <!--meta charset="UTF-8"-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Madad Calculate</title>
+    <title>קיבוע זכויות</title>
     <!--link rel="stylesheet" type="text/css" href="css/tax.css"-->
     <!--link rel="stylesheet" type="text/css" href="css/crud.css"-->
     <!--link rel="stylesheet" type="text/css" href="css/valid.css"-->
@@ -42,8 +42,8 @@
             <h4>קיבוע זכויות</h4>
             <!-- SRART DATE  -->
             <div class="input-box">
-              <label for="startdate">תחילת עבודה</label>
-              <input type="date" class="date"  id="startdate"/>
+              <label for="startdate"><span style="color: red;">* </span>תיחלת עבודה</label>
+              <input type="date" class="startdate"  id="startdate"/>
               <!-- SUCCESS SPAN  -->
               <span class="success startdate">
                 <i class="fa-sharp fa-solid fa-circle-check"></i>
@@ -55,8 +55,8 @@
 
             <!-- END DATE  -->
             <div class="input-box">
-              <label for="enddate">סיום עבודה</label>
-              <input type="date" class="date"  id="enddate" />
+              <label for="enddate"><span style="color: red;">* </span>סיום עבודה</label>
+              <input type="date" class="enddate"  id="enddate" />
               <!-- SUCCESS SPAN  -->
               <span class="success enddate">
                 <i class="fa-sharp fa-solid fa-circle-check"></i>
@@ -68,7 +68,7 @@
 
             <!-- MAANAK  -->
             <div class="input-box">
-              <label for="amount">מענק פטור</label>
+              <label for="amount"><span style="color: red;">* </span>מענק פטור</label>
               <input type="text" placeholder="נא להזין סכום מענק פטור" id="amount" />
               <!-- SUCCESS SPAN  -->
               <span class="success amount" dir="rtl" style="margin-top: 17px;">
@@ -81,8 +81,8 @@
 
             <!-- MADAD DATE -->
             <div class="input-box">
-              <label for="madaddate">תאריך הצמדה</label>
-              <input type="date" class="date"  id="madaddate" />
+              <label for="madaddate"><span style="color: red;">* </span>תאריך הצמדה</label>
+              <input type="date" class="madaddate"  id="madaddate" />
               <!-- SUCCESS SPAN  -->
               <span class="success madaddate">
                 <i class="fa-sharp fa-solid fa-circle-check"></i>
@@ -93,7 +93,7 @@
             </div>
             <div class="input-box">
               <label for="hivun">סכום ההיוון</label>
-                <input type="text" placeholder="נא להזין סכום ההיוון" id="huvun" />
+                <input type="text" placeholder="נא להזין סכום ההיוון" class = "hivun" id="hivun" />
                 <!-- SUCCESS SPAN  -->
                 <span class="success hivun" dir="rtl" style="margin-top: 17px;">
                   <i class="fa-sharp fa-solid fa-circle-check"></i>
@@ -105,7 +105,7 @@
             <div class="input-box">
               <div>
                 <label for="hivun190">היוונים שבוצעו לפני תיקון 190</label>
-                <input type="text" placeholder="נא להזין סכום ההיוון שבוע" id="hivun190" />
+                <input type="text" placeholder="נא להזין סכום ההיוון שבוצע" id="hivun190" />
                 <!-- SUCCESS SPAN  -->
                 <span class="success hivun190" dir="rtl" style="margin-top: 17px;">
                   <i class="fa-sharp fa-solid fa-circle-check"></i>
@@ -159,7 +159,7 @@
             <!-- SUBMIT BTN  -->
             <div class="btn">
               <button type="update" class="update" id="update">חישוב</button>
-              <button type="clear" class="reset" id="reset" onclick="resetForm()" >ניקוי</button>
+              <button type="reset" class="reset" id="reset" onclick="resetForm()" >ניקוי</button>
             </div>
             
           </form>

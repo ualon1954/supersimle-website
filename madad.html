@@ -4,7 +4,7 @@
     <!--meta charset="UTF-8"-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Madad Calculate</title>
+    <title>חישוב מדד</title>
     <!--link rel="stylesheet" type="text/css" href="css/tax.css"-->
     <!--link rel="stylesheet" type="text/css" href="css/crud.css"-->
     <!--link rel="stylesheet" type="text/css" href="css/valid.css"-->
@@ -42,7 +42,7 @@
             <h4>חישוב הצמדה למדד</h4>
             <!-- AMOUNT  -->
             <div class="input-box">
-              <label for="amount">סכום</label>
+              <label for="amount"><span style="color: red;">* </span>סכום</label>
               <input type="text" placeholder="נא להזין סכום הצמדה" id="amount" />
               <!-- SUCCESS SPAN  -->
               <span class="success amount" dir="rtl" style="margin-top: 17px;">
@@ -54,8 +54,8 @@
             </div>
             <!-- FROM DATE  -->
             <div class="input-box">
-              <label for="fromdate">מתאריך</label>
-              <input type="date" class="date"  id="fromdate"/>
+              <label for="fromdate"><span style="color: red;">* </span>מתאריך</label>
+              <input type="date" class="fromdate"  id="fromdate"/>
               <!-- SUCCESS SPAN  -->
               <span class="success fromdate">
                 <i class="fa-sharp fa-solid fa-circle-check"></i>
@@ -66,8 +66,8 @@
             </div>
             <!-- TO DATE  -->
             <div class="input-box">
-              <label for="todate">עד תאריך</label>
-              <input type="date" class="date"  id="todate" />
+              <label for="todate"><span style="color: red;">* </span>עד תאריך</label>
+              <input type="date" class="todate"  id="todate" />
               <!-- SUCCESS SPAN  -->
               <span class="success todate">
                 <i class="fa-sharp fa-solid fa-circle-check"></i>
@@ -107,7 +107,8 @@
             <!-- SUBMIT BTN  -->
             <div class="btn">
               <button type="update" class="update" id="update">חישוב</button>
-              <button type="clear" class="reset" id="reset" onclick="resetForm()" >ניקוי</button>
+              <button type="reset" class="reset" id="reset" onclick="resetForm()" >ניקוי</button>
+              <!--button type="reset" class="reset" id="reset">ניקוי</button-->
             </div>
             
           </form>

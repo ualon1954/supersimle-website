@@ -4,7 +4,7 @@
     <!--meta charset="UTF-8"-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tax Calculate</title>
+    <title>חישוב מס הכנסה</title>
     <!--link rel="stylesheet" type="text/css" href="css/tax.css"-->
     <!--link rel="stylesheet" type="text/css" href="css/crud.css"-->
     <!--link rel="stylesheet" type="text/css" href="css/valid.css"-->
@@ -42,6 +42,7 @@
             <h4>חישוב מס הכנסה</h4>
             <!-- AMOUNT  -->
             <div class="input-box">
+              <label for="amount"><span style="color: red;">* </span>סכום הכנסה</label>
               <input type="text" placeholder="נא להזין סכום הכנסה" id="amount" />
               <!-- SUCCESS SPAN  -->
               <span class="success amount" dir="rtl">
@@ -53,7 +54,8 @@
             </div>
             <!-- REFINEMENT POINTS  -->
             <div class="input-box">
-              <input type="rpoints" placeholder="נא להזין נקודות זיכוי" id="rpoints" />
+              <label for="rpoints">נקודות זיכוי</label>
+              <input type="rpoints" placeholder="נא להזין מספר נקודות זיכוי" class="rpoints" id="rpoints" />
               <!-- SUCCESS SPAN  -->
               <span class="success rpoints">
                 <i class="fa-sharp fa-solid fa-circle-check"></i>
@@ -64,7 +66,8 @@
             </div>
             <!-- PTOR AMOUNT  -->
             <div class="input-box">
-              <input type="text" placeholder="פטור נוסף" id="ptor" />
+              <label for="ptor">פטור נוסף</label>
+              <input type="text" placeholder="נא להזין פטור נוסף" class="ptor" id="ptor" />
               <!-- SUCCESS SPAN  -->
               <span class="success ptor" dir="rtl">
                 <i class="fa-sharp fa-solid fa-circle-check"></i>
@@ -100,7 +103,7 @@
             <!-- SUBMIT BTN  -->
             <div class="btn">
               <button type="update" class="update" id="update">חישוב</button>
-              <button type="clear" class="reset" id="reset" onclick="resetForm()" >ניקוי</button>
+              <button type="reset" class="reset" id="reset" onclick="resetForm()" >ניקוי</button>
             </div>
             
           </form>
