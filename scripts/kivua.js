@@ -142,25 +142,26 @@ function calculateKivua() {
 
 function resetForm () {
     let success = document.querySelectorAll(".success");
-    let error = document.querySelectorAll(".error");
-    let inputBorder = document.querySelectorAll(".container form .input-box input");
+    //let error = document.querySelectorAll(".error");
+    //let inputBorder = document.querySelectorAll(".container form .input-box input");
     document.querySelector(".result-container").style.display = "none";
     //let errorMobile = document.querySelector(".error.mobile");
     //let errorCity = document.querySelector(".error.city");
-    form[0].value = "";
-    form[1].value = "";
-    form[2].value = "";
+    //form[0].value = "";
+    //form[1].value = "";
+    //form[2].value = "";
     
     success.forEach((suc) => {
         suc.classList.remove("show");  
     });
+    /*
     error.forEach((err) => {
         err.classList.remove("show");  
     });
     inputBorder.forEach((border) => {
         border.classList.remove("show");  
         //border.style.color = "black";
-    });
+    }); */
     
 }
 
