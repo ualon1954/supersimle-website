@@ -130,7 +130,9 @@ function calculateKivua() {
                     minimumFractionDigits: 0, 
                     maximumFractionDigits: 0 
                   });;
-                form[14].value = each[17].toLocaleString('pl-PL', { style: 'percent' });
+                form[14].value = each[17].toLocaleString('pl-PL', { style: 'percent',
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2, });
                 }
             })
             document.querySelector(".result-container").style.display = "block";
