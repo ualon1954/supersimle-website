@@ -98,7 +98,7 @@ function StartDateCheck() {
   let successStartDate = document.querySelector(".success.startdate");
   let errorStartDate = document.querySelector(".error.startdate");
  
-  if (form[0].value.trim() == "") {
+  if (form1[0].value.trim() == "") {
     errorStartDate.classList.add("show");
     startdate.classList.add("show");
     errorStartDate.innerHTML = `<i class="bx bx-error-circle"></i> נא להזין/לבחור תאריך  `;
@@ -124,7 +124,7 @@ startdate.addEventListener("keyup", StartDateCheck);
 function EndDateCheck() {
   let successEndDate = document.querySelector(".success.enddate");
   let errorEndDate = document.querySelector(".error.enddate");
-    if (form[1].value.trim() == "") {
+    if (form1[1].value.trim() == "") {
     errorEndDate.classList.add("show");
     enddate.classList.add("show");
     errorEndDate.innerHTML = `<i class="bx bx-error-circle"></i> נא להזין/לבחור תאריך  `;
@@ -148,7 +148,7 @@ enddate.addEventListener("keyup", EndDateCheck);
 function MadadDateCheck() {
   let successMadadDate = document.querySelector(".success.madaddate");
   let errorMadadDate = document.querySelector(".error.madaddate");
-    if (form[3].value.trim() == "") {
+    if (form1[3].value.trim() == "") {
     errorMadadDate.classList.add("show");
     madaddate.classList.add("show");
     errorMadadDate.innerHTML = `<i class="bx bx-error-circle"></i> נא להזין/לבחור תאריך  `;
@@ -179,8 +179,9 @@ form1.addEventListener("submit", (e) => {
   HivunCheck();
  
  let isValid = false;
- if(!amount.classList.contains("show") && (hivun.classList.contains("show") || form[4].value.trim() == "") && form[0].value.trim() != "" && form[1].value.trim() != "" && form[3].value.trim() != "") {
-  isValid = true;
+ if(!amount.classList.contains("show") && (!hivun.classList.contains("show") || form1[4].value.trim() == "") && form1[0].value.trim() != "" && form1[1].value.trim() != "" && form1[3].value.trim() != "") {
+  //if(!amount.classList.contains("show")) {
+ isValid = true;
    
   }
   
