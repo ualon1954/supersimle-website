@@ -1,0 +1,135 @@
+<html>
+
+<head>
+    <!--meta charset="UTF-8"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>פריסת מס</title>
+    <!--link rel="stylesheet" type="text/css" href="css/tax.css"-->
+    <!--link rel="stylesheet" type="text/css" href="css/crud.css"-->
+    <!--link rel="stylesheet" type="text/css" href="css/valid.css"-->
+    <link rel="stylesheet" type="text/css" href="css/prica.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+</head>
+
+<body dir="rtl">
+  <main class="main-container">
+    
+        <div class="container">
+          <section class="form_header" dir="rtl">
+
+            <h1>מחשבונים</h1>
+            
+            <div class="export__file">
+                <label for="export-file" class="export__file-btn" title="Export File"></label>
+                <input type="checkbox" id="export-file">
+                <div class="export__file-options">
+                    <!--label>מחשבונים</label-->
+                    <label for="export-file" id="toTax"s>מס הכנסה <img src="images/calculator.png" alt=""></label>
+                    <label for="export-file" id="toMadad">מדד לצרכן <img src="images/madad.png" alt=""></label->
+                    <label for="export-file" id="toKivua">קיבוע זכויות <img src="images/calculator.png" alt=""></label>
+                    <!--label for="export-file" id="toPrica">פריסת פיצוים <img src="images/calculator.png" alt=""></label-->
+                </div>
+               
+            </div>
+          </section> 
+          
+          <form name="TaxForm"  class="tax-form">
+            <br /><br />
+            <h4>פריסת מס</h4>
+            <!-- SRART DATE  -->
+            <div class="input-box">
+              <label for="month">חודש פרישה</label>
+              <select name="month" id="month">
+                <option value="" selected="selected"></option>
+              </select>
+            </div>
+            <div class="input-box">
+              <label for="firstyear">שנת פריסה ראשונה</label>
+              <select name="firstyear" id="firstyear">
+                <option value="" selected="selected"></option>
+              </select>
+            </div>
+            
+            <div class="input-box">
+              <label for="amount"><span style="color: red;">* </span>סכום פריסה</label>
+              <input type="text" placeholder="נא להזין סכום פריסה" id="amount" />
+              <!-- SUCCESS SPAN  -->
+              <span class="success amount" dir="rtl" style="margin-top: 17px;">
+                <i class="fa-sharp fa-solid fa-circle-check"></i>
+              </span>
+              <br />
+              <!-- ERROR SPAN  -->
+              <span class="error amount"></span>
+            </div>
+            <div class="input-box">
+              <label for="aamount">הכנסה נוספת</label>
+              <input type="text" placeholder="נא להזין הכנסה נוספת" id="aamount" />
+              <!-- SUCCESS SPAN  -->
+              <span class="success aamount" dir="rtl" style="margin-top: 17px;">
+                <i class="fa-sharp fa-solid fa-circle-check"></i>
+              </span>
+              <br />
+              <!-- ERROR SPAN  -->
+              <span class="error aamount"></span>
+            </div>
+            <div class="input-box">
+              <label for="pencia"><span style="color: red;">* </span>פנסיה חודשית</label>
+              <input type="text" placeholder="נא להזין סכום פנסיה חודשית" id="pencia" />
+              <!-- SUCCESS SPAN  -->
+              <span class="success pencia" dir="rtl" style="margin-top: 17px;">
+                <i class="fa-sharp fa-solid fa-circle-check"></i>
+              </span>
+              <br />
+              <!-- ERROR SPAN  -->
+              <span class="error pencia"></span>
+            </div>
+            <div class="input-box">
+              <label for="prica">שנות פריסה</label>
+              <select name="prica" id="prica">
+                <option value="" selected="selected"></option>
+              </select>
+            </div>
+           
+      
+            
+            
+            <div class="result-container">
+              <div class="result-box">
+                <table>
+                  <thead>
+                    <th>#</th>
+                    <th>שנה</th>
+                    <th>סכום פריסה</th>
+                    <th>הכנסה נוספת</th>
+                    <th>סך הכנסה</th>
+                    <th>אחוז המס</th>
+                    <th>סכום המקדמה</th>
+                  </thead>
+                  <tbody></tbody> 
+                </table>  
+            </div>
+            
+          </div>
+            <!-- SUBMIT BTN  -->
+            <div class="btn">
+              <button type="update" class="update" id="update">חישוב</button>
+              <button type="reset" class="reset" id="reset" onclick="resetForm()" >ניקוי</button>
+            </div>
+            
+          </form>
+        </div>
+      </main>
+       
+
+    <!--script src="scripts/crud.js"--></script>
+    <!--script src="scripts/script1.js"></script-->
+    <script src="scripts/prica.js"></script>
+    <script src="scripts/combos_prica.js"></script>
+    
+    <script src="scripts/validation_prica.js"></script>
+
+</body>
