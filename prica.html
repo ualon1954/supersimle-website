@@ -27,9 +27,9 @@
                 <label for="export-file" class="export__file-btn" title="Export File"></label>
                 <input type="checkbox" id="export-file">
                 <div class="export__file-options">
-                    <!--label>מחשבונים</label-->
+                    <label>מחשבונים</label>
                     <label for="export-file" id="toTax"s>מס הכנסה <img src="images/calculator.png" alt=""></label>
-                    <label for="export-file" id="toMadad">מדד לצרכן <img src="images/madad.png" alt=""></label->
+                    <label for="export-file" id="toMadad">מדד לצרכן <img src="images/madad.png" alt=""></label>
                     <label for="export-file" id="toKivua">קיבוע זכויות <img src="images/calculator.png" alt=""></label>
                     <!--label for="export-file" id="toPrica">פריסת פיצוים <img src="images/calculator.png" alt=""></label-->
                 </div>
@@ -37,19 +37,26 @@
             </div>
           </section> 
           
-          <form name="TaxForm"  class="tax-form">
+          <form name="PricaForm"  class="prica-form">
             <br /><br />
             <h4>פריסת מס</h4>
             <!-- SRART DATE  -->
             <div class="input-box">
-              <label for="month">חודש פרישה</label>
-              <select name="month" id="month" style="display: block;">
+              <label for="month"></label><span style="color: red;font-weight: 600;">* </span>חודש פרישה</label>
+              <select name="month" id="month">
                 <option value="" selected="selected"></option>
               </select>
+              <!-- SUCCESS SPAN  -->
+              <span class="success month" dir="rtl" style="margin-top: 17px;">
+                <i class="fa-sharp fa-solid fa-circle-check"></i>
+              </span>
+              <br />
+              <!-- ERROR SPAN  -->
+              <span class="error month"></span>
             </div>
             <div class="input-box">
-              <label for="firstyear">שנת פריסה ראשונה</label>
-              <select name="firstyear" id="firstyear" style="display: block;">
+              <label for="firstyear" ></label><span style="color: red;font-weight: 600;">* </span>שנת פריסה ראשונה</label>
+              <select name="firstyear" id="firstyear">
                 <option value="" selected="selected"></option>
               </select>
             </div>
@@ -67,7 +74,7 @@
             </div>
             <div class="input-box">
               <label for="aamount">הכנסה נוספת</label>
-              <input type="text" placeholder="נא להזין הכנסה נוספת" id="aamount" />
+              <input type="text" placeholder="נא להזין הכנסה נוספת" calss="aamount" id="aamount" />
               <!-- SUCCESS SPAN  -->
               <span class="success aamount" dir="rtl" style="margin-top: 17px;">
                 <i class="fa-sharp fa-solid fa-circle-check"></i>
@@ -78,7 +85,7 @@
             </div>
             <div class="input-box">
               <label for="pencia"><span style="color: red;">* </span>פנסיה חודשית</label>
-              <input type="text" placeholder="נא להזין סכום פנסיה חודשית" id="pencia" />
+              <input type="text" placeholder="נא להזין סכום פנסיה חודשית" class ="pencia" id="pencia" />
               <!-- SUCCESS SPAN  -->
               <span class="success pencia" dir="rtl" style="margin-top: 17px;">
                 <i class="fa-sharp fa-solid fa-circle-check"></i>
@@ -89,7 +96,7 @@
             </div>
             <div class="input-box">
               <label for="prica">שנות פריסה</label>
-              <select name="prica" id="prica" style="display: block;">
+              <select name="prica" id="prica">
                 <option value="" selected="selected"></option>
               </select>
             </div>
