@@ -44,6 +44,7 @@ body {
     align-items:center;
     justify-content:center;
     }
+
 h1 {
    text-align: center;
    font-size: 16px;
@@ -51,7 +52,6 @@ h1 {
    font-family: sans-serif;
 }
 .container form {
-    position: relative;
     width: 450px;
     background-color: #fff;
     border-radius: 6px;
@@ -420,10 +420,11 @@ h1 {
       th {
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-weight: 600;
-        background-color: #033169;
+        background-color: #0c030a;
         color: #fff;
         
       }
+      
       th,td{
         /*padding: 5px;*/
         border-style: solid;
@@ -431,11 +432,17 @@ h1 {
         text-align: center;
       }
       tr:nth-child(even) {
-        background-color: Lightgreen;
-    }
+        background-color: whitesmoke;
+      }
+      tr:nth-child(odd) {
+        background-color: rgb(201, 201, 235);
+      }
     .id {
-        background-color: #033169;
+        background-color: #0c030a;
         color: #fff;
+    }
+    .taxpercent {
+        color:red;
     }
          
       /*
