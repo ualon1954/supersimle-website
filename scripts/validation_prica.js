@@ -1,12 +1,33 @@
 //Form validation
 let form1 = document.querySelector("form"),
   amount = document.querySelector("form #amount"),
-  startdate = document.querySelector("form #startdate"),
-  enddate = document.querySelector("form #enddate"),
-  madaddate = document.querySelector("form #enddate");
-  hivun = document.querySelector("form #hivun");
-
+  addamount = document.querySelector("form #aamount");
+  pencia = document.querySelector("form #pencia");
+  month = document.querySelector("form #month");
   
+// MONTH CHECK FUNCTION
+function MonthCheck() {
+  let successMonth = document.querySelector(".success.month");
+  let errorMonth = document.querySelector(".error.month");
+  
+  if (month.value.length == 0) {
+    errorMonth.classList.add("show");
+    month.classList.add("show");
+    errorMonth.innerHTML = `<i class="bx bx-error-circle"></i> נא לבחור חודש פרישה`;
+  } else {
+    errorMonth.classList.remove("show");
+    month.classList.remove("show");
+  }
+}
+
+// MONTH EVENT LISTENER
+month.addEventListener("keyup", MonthCheck);
+
+
+
+
+
+
 // AMOUNT CHECK FUNCTION
 function AmountCheck() {
   let successAmount = document.querySelector(".success.amount");
@@ -27,7 +48,7 @@ function AmountCheck() {
     successAmount.classList.remove("show");
     errorAmount.classList.add("show");
     amount.classList.add("show");
-    errorAmount.innerHTML = `<i class="bx bx-error-circle"></i> נא להזין לפחות 5 תווים`;
+    errorAmount.innerHTML = `<i class="bx bx-error-circle"></i> נא להזין לפחות 5 ספרות`;
    } else if (amount.value.length >= 5) {
     errorAmount.classList.remove("show");
     successAmount.classList.add("show");
@@ -42,45 +63,45 @@ function AmountCheck() {
 }
 
 // AMOUNT EVENT LISTENER
-//amount.addEventListener("keyup", AmountCheck);
+amount.addEventListener("keyup", AmountCheck);
 
 
-// HIVUN CHECK FUNCTION
-function HivunCheck() {
-  let successHivun = document.querySelector(".success.hivun");
-  let errorHivun = document.querySelector(".error.hivun");
+// ADD AMOUNT CHECK FUNCTION
+function AddAmount() {
+  let successAddAmount = document.querySelector(".success.aamount");
+  let errorAddAmount = document.querySelector(".error.aamount");
   let regularExpression = 
       /^[0-9]*$/
-  if (hivun.value.trim() != "") {
-    document.querySelector(".hivun").style.borderColor = "red";
-    if (!regularExpression.test(hivun.value.trim())) {
+  if (addamount.value.trim() != "") {
+    document.querySelector(".aamount").style.borderColor = "red";
+    if (!regularExpression.test(addamount.value.trim())) {
       
-      errorHivun.classList.add("show");
-      successHivun.classList.add("show");
-      successHivun.classList.remove("show");
+      errorAddAmount.classList.add("show");
+      successAddAmount.classList.add("show");
+      successAddAmount.classList.remove("show");
       //document.querySelector(".startdate").style.borderColor = "red";
-      errorHivun.innerHTML = `<i class="bx bx-error-circle"></i>נא להזין ספרות בלבד`;  
+      errorAddAmount.innerHTML = `<i class="bx bx-error-circle"></i>נא להזין ספרות בלבד`;  
       
-    } else if (hivun.value.length < 5) {
-      successHivun.classList.remove("show");
-      errorHivun.classList.add("show");
-      hivun.classList.add("show");
-      errorHivun.innerHTML = `<i class="bx bx-error-circle"></i> נא להזין לפחות 5 תווים`;
-    } else if (hivun.value.length >= 5) {
-      errorHivun.classList.remove("show");
-      successHivun.classList.add("show");
-      hivun.classList.remove("show");
+    } else if (addamount.value.length < 5) {
+      successAddAmount.classList.remove("show");
+      errorAddAmount.classList.add("show");
+      addamount.classList.add("show");
+      errorAddAmount.innerHTML = `<i class="bx bx-error-circle"></i> נא להזין לפחות 5 תווים`;
+    } else if (addamount.value.length >= 5) {
+      errorAddAmount.classList.remove("show");
+      successAddAmount.classList.add("show");
+      addamount.classList.remove("show");
     
-    } else if (hivun.value.length > 8) {
-      successHivun.classList.remove("show");
-      errorHivun.classList.add("show");
-      successHivun.classList.add("show");
-      errorHivun.innerHTML = `<i class="bx bx-error-circle"></i> נא להזין עד 8 ספרות`;
+    } else if (addamount.value.length > 8) {
+      successAddAmount.classList.remove("show");
+      errorAddAmount.classList.add("show");
+      successAddAmount.classList.add("show");
+      errorAddAmount.innerHTML = `<i class="bx bx-error-circle"></i> נא להזין עד 8 ספרות`;
     }
   }
-    if (hivun.value.trim() == "") {
-        errorHivun.classList.remove("show");
-        successHivun.classList.remove("show");
+    if (addamount.value.trim() == "") {
+        errorAddAmount.classList.remove("show");
+        successAddAmount.classList.remove("show");
         //document.querySelector(".startdate").style.borderColor = "green";
       // successHivun.classList.remove("show");
     }
@@ -89,8 +110,46 @@ function HivunCheck() {
  
 
 
-// HIVUN EVENT LISTENER
-//hivun.addEventListener("keyup", HivunCheck);
+// ADD AMOUNT  EVENT LISTENER
+addamount.addEventListener("keyup", AddAmount);
+
+// PENCIA CHECK FUNCTION
+function PenciaCheck() {
+  let successPencia = document.querySelector(".success.pencia");
+  let errorPencia = document.querySelector(".error.pencia");
+  let regularExpression = 
+     /^[0-9]*$/
+  if (pencia.value.trim() == "") {
+    errorPencia.classList.add("show");
+    pencia.classList.add("show");
+    errorPencia.innerHTML = `<i class="bx bx-error-circle"></i> נא להזין סכום פנסיה`;
+  } else if (!regularExpression.test(pencia.value.trim())) {
+    errorPencia.classList.add("show");
+    successPencia.classList.add("show");
+    successPencia.classList.remove("show");
+    errorPencia.innerHTML = `<i class="bx bx-error-circle"></i>נא להזין ערך חוקי`;  
+ 
+  } else if (pencia.value.length < 4) {
+    successPencia.classList.remove("show");
+    errorPencia.classList.add("show");
+    pencia.classList.add("show");
+    errorPencia.innerHTML = `<i class="bx bx-error-circle"></i> נא להזין לפחות 4 ספרות`;
+   } else if (pencia.value.length >= 4) {
+    errorPencia.classList.remove("show");
+    successPencia.classList.add("show");
+    pencia.classList.remove("show");
+  }
+  if (pencia.value.length > 6) {
+    successPencia.classList.remove("show");
+    errorPencia.classList.add("show");
+    successPencia.classList.add("show");
+    errorPencia.innerHTML = `<i class="bx bx-error-circle"></i> נא להזין עד 6 ספרות`;
+  }
+}
+
+// PENCIA EVENT LISTENER
+pencia.addEventListener("keyup", PenciaCheck);
+
 
 
 // START DATE CHECK FUNCTION
@@ -174,7 +233,10 @@ form1.addEventListener("submit", (e) => {
   e.preventDefault();
   //StartDateCheck();
  // EndDateCheck();
- // AmountCheck();
+ MonthCheck();
+ AmountCheck();
+ AddAmount();
+ PenciaCheck();
  // MadadDateCheck();
  // HivunCheck();
  
@@ -186,8 +248,8 @@ form1.addEventListener("submit", (e) => {
   
   if (isValid) {
     //alert("addData");
-    //clearPrica();
-    updateDataPrica();
+    clearPrica();
+    //updateDataPrica();
     //readPrica();
     //calculatePrica();
     

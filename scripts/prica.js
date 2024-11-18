@@ -1,6 +1,6 @@
 /* CRUD for contacts */
 
-let api = "https://script.google.com/macros/s/AKfycbztLRR78VRc-J4euLH4UdlDRfFEme57VygrBXF9vAJ1AQL4NSJySMKsTanM9meED0Fo/exec";
+let api = "https://script.google.com/macros/s/AKfycbywfnxRyotA-WD1unNpKZvqAwURk6br1hTk2gAT9h1-ta4t0f--DvEgNgKfDBYhgZSb/exec";
 let form = document.querySelector("form");
 console.log(form);
 let add = document.querySelector(".add");
@@ -14,10 +14,14 @@ let lamount = document.querySelector('label[for="tax"]');  //does nothing
 //let totalAmount = 0; 
 
 function clearPrica() {
+    document.querySelector(".update").innerHTML = "מחשב...";
+    //alert("clear");
     fetch(api+`?del=true`)
     .then(res => res.text())
     .then(data=> {
-        //updateDataPrica();
+        if (data === 'data Deleted!') {
+          updateDataPrica();
+        }
     })
 }
 
@@ -33,7 +37,7 @@ function calculatePrica() {
     let pricaHTML = '';
     let aAmount = ''; 
     let totalAmount = 0;
-    fetch(api+`?del=true&id=2`)
+    fetch(api+`?del=true`)
             .then(res => res.text())
             .then(data=> {
                 //readData()
@@ -69,7 +73,7 @@ function calculatePrica() {
                 minimumFractionDigits: 0, 
                 maximumFractionDigits: 0 
               })}</td>
-            <td id="taxpecents">24%</td>
+            <td class ="taxpercents" id="taxpercents">24%</td>
             <td id="taxamount">23577</td>
         </tr>   
         `;
@@ -97,7 +101,7 @@ function calculatePrica() {
         pricaHTML += `
         <tr>
             <td class="id">${each[0]}</td>
-            <td class="firstyear">${each[1]}</td>
+            <td class="firstyear" style="font-weight: 600;">${each[1]}</td>
             <td id="pricaamount">${each[2].toLocaleString(undefined, { 
                 minimumFractionDigits: 0, 
                 maximumFractionDigits: 0 
@@ -110,10 +114,10 @@ function calculatePrica() {
                 minimumFractionDigits: 0, 
                 maximumFractionDigits: 0 
               })}</td>
-            <td id="taxpecents">${each[5].toLocaleString('pl-PL', { style: 'percent',
+            <td id="taxpecents" style="color:red;">${each[5].toLocaleString('pl-PL', { style: 'percent',
                 minimumFractionDigits: 0,
                 maximumFractionDigits: 0, })}</td>
-            <td id="taxamount">${mikdama}</td>
+            <td id="taxamount" style="color:red;">${mikdama}</td>
         </tr>   
         `;
         });
@@ -128,7 +132,7 @@ function calculatePrica() {
 
 function updateDataPrica() {
     //clearPrica();
-    document.querySelector(".update").innerHTML = "מחשב...";
+    //document.querySelector(".update").innerHTML = "מחשב...";
     let firstYear = parseInt(document.getElementById('firstyear').value);
     let month = parseInt(document.getElementById('month').value);
     let pricaAmount = parseInt(document.getElementById('amount').value);
@@ -155,8 +159,11 @@ function updateDataPrica() {
     
           .then(res => res.text())
           .then(data=> {
+            if (data === 'data Updateed!') {
+                readPrica();
+                }
           })
-          readPrica();
+          
     } 
     
  

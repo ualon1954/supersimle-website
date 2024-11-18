@@ -281,10 +281,11 @@ const tPrica = function (customers_table) {
     }, 400);
 }
 
-//prica_btn.onclick = () => {
+prica_btn.onclick = () => {
+    window.location.href = "prica.html";
 //    alert("prica")
     //toPDF(customers_table);
-//}
+}
 
 
 
