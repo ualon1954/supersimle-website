@@ -4,6 +4,8 @@ let form1 = document.querySelector("form"),
   addamount = document.querySelector("form #aamount");
   pencia = document.querySelector("form #pencia");
   month = document.querySelector("form #month");
+  year = document.querySelector("form #firstyear");
+  prica = document.querySelector("form #prica");
   
 // MONTH CHECK FUNCTION
 function MonthCheck() {
@@ -22,6 +24,24 @@ function MonthCheck() {
 
 // MONTH EVENT LISTENER
 month.addEventListener("keyup", MonthCheck);
+
+// YEAR CHECK FUNCTION
+function YearCheck() {
+  let successYear = document.querySelector(".success.firstyear");
+  let errorYear = document.querySelector(".error.firstyear");
+  
+  if (year.value.length == 0) {
+    errorYear.classList.add("show");
+    year.classList.add("show");
+    errorYear.innerHTML = `<i class="bx bx-error-circle"></i> נא לבחור שנת פריסה`;
+  } else {
+    errorYear.classList.remove("show");
+    year.classList.remove("show");
+  }
+}
+
+// YEAR EVENT LISTENER
+year.addEventListener("keyup", YearCheck);
 
 
 
@@ -74,13 +94,22 @@ function AddAmount() {
       /^[0-9]*$/
   if (addamount.value.trim() != "") {
     document.querySelector(".aamount").style.borderColor = "red";
-    if (!regularExpression.test(addamount.value.trim())) {
+    if (regularExpression.test(addamount.value.trim())) {
       
-      errorAddAmount.classList.add("show");
+      errorAddAmount.classList.remove("show");
       successAddAmount.classList.add("show");
-      successAddAmount.classList.remove("show");
+      addamount.classList.remove("show");
       //document.querySelector(".startdate").style.borderColor = "red";
-      errorAddAmount.innerHTML = `<i class="bx bx-error-circle"></i>נא להזין ספרות בלבד`;  
+      //errorAddAmount.innerHTML = `<i class="bx bx-error-circle"></i>נא להזין ספרות בלבד`; 
+    } else {
+      errorAddAmount.classList.add("show");
+      addamount.classList.add("show");
+      successAddAmount.classList.remove("show");
+      //document.querySelector(".ptor").style.borderColor = "rgba(0, 0, 0, 0.3);";
+      errorAddAmount.innerHTML = `<i class="bx bx-error-circle"></i>נא להזין ערך חוקי`;
+      // document.querySelector(".aamount").style.borderColor = "red";
+
+    }
       
     } else if (addamount.value.length < 5) {
       successAddAmount.classList.remove("show");
@@ -98,16 +127,14 @@ function AddAmount() {
       successAddAmount.classList.add("show");
       errorAddAmount.innerHTML = `<i class="bx bx-error-circle"></i> נא להזין עד 8 ספרות`;
     }
-  }
     if (addamount.value.trim() == "") {
-        errorAddAmount.classList.remove("show");
-        successAddAmount.classList.remove("show");
-        //document.querySelector(".startdate").style.borderColor = "green";
-      // successHivun.classList.remove("show");
-    }
-   
+      errorAddAmount.classList.remove("show");
+      successAddAmount.classList.add("show");
+      document.querySelector(".aamount").style.borderColor = "green";
+    // successHivun.classList.remove("show");
   }
- 
+  }
+     
 
 
 // ADD AMOUNT  EVENT LISTENER
@@ -125,7 +152,7 @@ function PenciaCheck() {
     errorPencia.innerHTML = `<i class="bx bx-error-circle"></i> נא להזין סכום פנסיה`;
   } else if (!regularExpression.test(pencia.value.trim())) {
     errorPencia.classList.add("show");
-    successPencia.classList.add("show");
+    //successPencia.classList.add("show");
     successPencia.classList.remove("show");
     errorPencia.innerHTML = `<i class="bx bx-error-circle"></i>נא להזין ערך חוקי`;  
  
@@ -151,6 +178,23 @@ function PenciaCheck() {
 pencia.addEventListener("keyup", PenciaCheck);
 
 
+// PRICA CHECK FUNCTION
+function PricaCheck() {
+  let successPrica = document.querySelector(".success.prica");
+  let errorPrica = document.querySelector(".error.prica");
+  
+  if (prica.value.length == 0) {
+    errorPrica.classList.add("show");
+    prica.classList.add("show");
+    errorPrica.innerHTML = `<i class="bx bx-error-circle"></i> נא לבחור שנות פריסה`;
+  } else {
+    errorPrica.classList.remove("show");
+    prica.classList.remove("show");
+  }
+}
+
+// PRICA EVENT LISTENER
+prica.addEventListener("keyup", PricaCheck);
 
 // START DATE CHECK FUNCTION
 function StartDateCheck() {
@@ -234,14 +278,17 @@ form1.addEventListener("submit", (e) => {
   //StartDateCheck();
  // EndDateCheck();
  MonthCheck();
+ YearCheck();
  AmountCheck();
  AddAmount();
  PenciaCheck();
+ PricaCheck();
  // MadadDateCheck();
  // HivunCheck();
  
  let isValid = false;
- if(!amount.classList.contains("show")) {
+ if(form[0].value != "" && form[1].value != "" && form[5].value != "" && !amount.classList.contains("show") && (!addamount.classList.contains("show") || addamount.value.trim() == "")) {
+  
   isValid = true;
    
   }

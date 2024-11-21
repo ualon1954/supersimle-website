@@ -3,7 +3,7 @@ let form1 = document.querySelector("form"),
   amount = document.querySelector("form #amount"),
   startdate = document.querySelector("form #startdate"),
   enddate = document.querySelector("form #enddate"),
-  madaddate = document.querySelector("form #enddate");
+  madaddate = document.querySelector("form #enddate"),
   hivun = document.querySelector("form #hivun");
 
   
@@ -51,20 +51,30 @@ function HivunCheck() {
   let errorHivun = document.querySelector(".error.hivun");
   let regularExpression = 
       /^[0-9]*$/
-  if (hivun.value.trim() != "") {
+      
+  if (form[4].value != "") {
+    
     document.querySelector(".hivun").style.borderColor = "red";
-    if (!regularExpression.test(hivun.value.trim())) {
-      
+    if (regularExpression.test(hivun.value.trim())) {
+        errorHivun.classList.remove("show");
+        successHivun.classList.add("show");
+        hivun.classList.remove("show");
+        //document.querySelector(".startdate").style.borderColor = "red";
+       // errorHivun.innerHTML = `<i class="bx bx-error-circle"></i>נא להזין ספרות בלבד`;  
+    }
+    else{
       errorHivun.classList.add("show");
-      successHivun.classList.add("show");
+      hivun.classList.add("show");
       successHivun.classList.remove("show");
-      //document.querySelector(".startdate").style.borderColor = "red";
-      errorHivun.innerHTML = `<i class="bx bx-error-circle"></i>נא להזין ספרות בלבד`;  
-      
+      //document.querySelector(".ptor").style.borderColor = "rgba(0, 0, 0, 0.3);";
+      errorHivun.innerHTML = `<i class="bx bx-error-circle"></i>נא להזין ערך חוקי`;
+      document.querySelector(".hivun").style.borderColor = "red";
+
+    }  
     } else if (hivun.value.length < 5) {
       successHivun.classList.remove("show");
       errorHivun.classList.add("show");
-      hivun.classList.add("show");
+      hivun.classList.remove("show");
       errorHivun.innerHTML = `<i class="bx bx-error-circle"></i> נא להזין לפחות 5 תווים`;
     } else if (hivun.value.length >= 5) {
       errorHivun.classList.remove("show");
@@ -77,15 +87,17 @@ function HivunCheck() {
       successHivun.classList.add("show");
       errorHivun.innerHTML = `<i class="bx bx-error-circle"></i> נא להזין עד 8 ספרות`;
     }
-  }
     if (hivun.value.trim() == "") {
-        errorHivun.classList.remove("show");
-        successHivun.classList.remove("show");
-        //document.querySelector(".startdate").style.borderColor = "green";
-      // successHivun.classList.remove("show");
-    }
-   
+      errorHivun.classList.remove("show");
+      successHivun.classList.remove("show");
+      document.querySelector(".hivun").style.borderColor = "green";
+      //document.querySelector(".startdate").style.borderColor = "green";
+    // successHivun.classList.remove("show");
   }
+  }
+    
+   
+
  
 
 

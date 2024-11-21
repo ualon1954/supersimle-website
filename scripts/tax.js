@@ -1,6 +1,6 @@
 /* CRUD for contacts */
 
-let api = "https://script.google.com/macros/s/AKfycbwkSmW1_mZ_cq8XMf2v9Sjp_CBDILWeB93NWs38Smp-D9GN5btjoq4AaRj54QjYrs_K/exec";
+let api = "https://script.google.com/macros/s/AKfycbwZQnt_PavalDGpNuDAOtK7E-ew3Hz3Oz9LNjOQmx7lcwu-0YId2FzRUHGCI1yHv8FB/exec";
 let form = document.querySelector("form");
 console.log(form);
 let add = document.querySelector(".add");
@@ -8,20 +8,26 @@ let update = document.querySelector(".update");
 let tbody = document.querySelector("tbody");
 let tbody_rows = '';
 let show_flag = 0;
-
+let monthly = document.getElementById("month").checked;
 
 
 
    function updateData() {
-    //alert("update");
-    let prifileUrl = '';
-    if (form[3].value === "") {
-        prifileUrl = "images/anonim.jpg";
-    }else{
-        prifileUrl =  form[3].value ;
-    }
+    taxmadr = '';
+    taxshuli = '';
+    lowmad = '';
+    if (document.getElementById("month").checked == true) {
+        taxmadr = `=VLOOKUP(${form[2].value},M_2024[%23ALL],3)`;
+        taxshuli = `=VLOOKUP((${form[2].value} - ${form[4].value}),M_2024[%23ALL],2)`;
+        lowmad = `=VLOOKUP(${form[2].value} ,M_2024[%23ALL],1)`;
+   }
+    else {
+        taxmadr = `=VLOOKUP(${form[2].value},Y_2024[%23ALL],3)`;
+        taxshuli = `=VLOOKUP((${form[2].value} - ${form[4].value}),Y_2024[%23ALL],2)`;
+        lowmad = `=VLOOKUP(${form[2].value} ,Y_2024[%23ALL],1)`;
+    }    
     document.querySelector(".update").innerHTML = "מחשב..."
-    fetch(api+`?updatetax=true&id=2&amount=${form[0].value}&rpoints=${form[1].value}&ptor=${form[2].value}`)
+    fetch(api+`?updatetax=true&id=2&amount=${form[2].value}&rpoints=${form[3].value}&ptor=${form[4].value}&taxmadr=${taxmadr}&shuli=${taxshuli}&low=${lowmad}`)
     //fetch(api+`?update=true&id=${id}&data=${form[1].value}`)
     .then(res => res.text())
     .then(data=> {
@@ -34,8 +40,7 @@ let show_flag = 0;
        //document.querySelector('#cancel').innerHTML="Clear";
        //document.querySelector(".update").innerHTML = "Update"
        //document.querySelector(".contact-form").style.display = "none"; 
-        document.querySelector(".update").innerHTML = "חישוב"
-        document.querySelector(".result-container").style.display = "block";
+       
     })
     
 } 
@@ -69,17 +74,17 @@ function calculateTax() {
             let trtd = todo.map(each=> {
             if (1 === each[0] ) {
              
-                form[3].value = each[6].toLocaleString(undefined, { 
+                form[5].value = each[7].toLocaleString(undefined, { 
                     minimumFractionDigits: 2, 
                     maximumFractionDigits: 2 
                   });
-                form[4].value = each[7];
-                form[5].value = each[8].toLocaleString(undefined, { 
+                form[6].value = each[9];
+                form[7].value = each[10].toLocaleString(undefined, { 
                     minimumFractionDigits: 2, 
                     maximumFractionDigits: 2 
                   });
-                form[6].value = each[4].toLocaleString('pl-PL', { style: 'percent' });
-                form[7].value = each[9].toLocaleString(undefined, { 
+                form[8].value = each[5].toLocaleString('pl-PL', { style: 'percent' });
+                form[9].value = each[11].toLocaleString(undefined, { 
                     minimumFractionDigits: 2, 
                     maximumFractionDigits: 2 
                   });
@@ -91,6 +96,8 @@ function calculateTax() {
                 //document.querySelector('#cancel').innerHTML="Cancel";
             }
             })
+            document.querySelector(".update").innerHTML = "חישוב"
+            document.querySelector(".result-container").style.display = "block";
         })
         
     
@@ -192,7 +199,7 @@ const toKivua = function (customers_table) {
 }
 
 kivua_btn.onclick = () => {
-//    alert("kivua")
+   // alert("kivua")
 window.location.href = "kivua.html";
 }
 

@@ -1,6 +1,6 @@
 /* CRUD for contacts */
 
-let api = "https://script.google.com/macros/s/AKfycbywfnxRyotA-WD1unNpKZvqAwURk6br1hTk2gAT9h1-ta4t0f--DvEgNgKfDBYhgZSb/exec";
+let api = "https://script.google.com/macros/s/AKfycbwZQnt_PavalDGpNuDAOtK7E-ew3Hz3Oz9LNjOQmx7lcwu-0YId2FzRUHGCI1yHv8FB/exec";
 let form = document.querySelector("form");
 console.log(form);
 let add = document.querySelector(".add");
@@ -10,11 +10,14 @@ let tbody_rows = '';
 let show_flag = 0;
 let lamount = document.querySelector('label[for="tax"]');  //does nothing
 
+
+
 //let aAmount = ''; 
 //let totalAmount = 0; 
 
 function clearPrica() {
     document.querySelector(".update").innerHTML = "מחשב...";
+    document.querySelector(".result-container").style.display = "none";
     //alert("clear");
     fetch(api+`?del=true`)
     .then(res => res.text())
@@ -118,9 +121,39 @@ function calculatePrica() {
                 minimumFractionDigits: 0,
                 maximumFractionDigits: 0, })}</td>
             <td id="taxamount" style="color:red;">${mikdama}</td>
-        </tr>   
+        </tr>
         `;
         });
+
+        var table = document.querySelector('table');
+        var percCell = table.rows[ table.rows.length - 1 ].cells[ table.rows[ table.rows.length - 1 ].cells.length - 2 ];
+        var mikdamaCell = table.rows[ table.rows.length - 1 ].cells[ table.rows[ table.rows.length - 1 ].cells.length - 1 ];
+        var sum1 = 0;
+        var sum2 = 0;
+        var rownum = table.rows.length - 2;
+        for( var i = 1; i < table.rows.length - 1; i++ ){
+            sum1 = sum1 + parseFloat(table.rows[ i ].cells[ 5 ].textContent);
+        }
+        for( var i = 1; i < table.rows.length - 1; i++ ){
+            sum2 = sum2 + parseFloat((table.rows[ i ].cells[ 6 ].textContent).replace(",",""));
+            //console.log(table.rows[ i ].cells[ 6 ].textContent.replace(",",""));
+        }
+
+        percCell.textContent = (sum1.toFixed( 0 )/rownum/100).toLocaleString('pl-PL', { style: 'percent',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0, });
+
+        mikdamaCell.textContent = sum2.toLocaleString(undefined, { 
+            minimumFractionDigits: 0, 
+            maximumFractionDigits: 0 
+          });
+        
+        //console.log(typeof sum2);
+        
+        //console.log('12,555'.toString());
+
+
+
 
         document.querySelector("tbody").innerHTML = pricaHTML;
         document.querySelector(".update").innerHTML = "חישוב";
@@ -145,27 +178,28 @@ function updateDataPrica() {
     //clearPrica();
         
     for (i=1;  i <= prica; i++)  {
-        if (i ==1 ) {
-            aAmount = addAmount + 11*penciaAmount;
+        if (i ==1 && form[3].value != "") {
+            aAmount = addAmount + (12 - month)*penciaAmount;
         }    
         else {
             aAmount = 12*penciaAmount;
         }
+        
         totalAmount = parseInt(pricaAmount) + parseInt(aAmount);
          
-        taxperc = `=(VLOOKUP(${totalAmount},Prica!$A$1:$C$8,3,TRUE) %2B (${totalAmount}-VLOOKUP(${totalAmount},Prica!$A$1:$C$8,1,TRUE)) * VLOOKUP(${totalAmount},Prica!$A$1:$C$8,2,TRUE) - VLOOKUP(${aAmount},Prica!$A$1:$C$8,3,TRUE) - (${aAmount} - VLOOKUP(${aAmount},Prica!$A$1:$C$8,1,TRUE)) * VLOOKUP(${aAmount},Prica!$A$1:$C$8,2,True)) / ${pricaAmount}`
+        taxperc = `=(VLOOKUP(${totalAmount},YEAR2024[%23ALL],3,TRUE) %2B (${totalAmount}-VLOOKUP(${totalAmount},YEAR2024[%23ALL],1,TRUE)) * VLOOKUP(${totalAmount},YEAR2024[%23ALL],2,TRUE) - VLOOKUP(${aAmount},YEAR2024[%23ALL],3,TRUE) - (${aAmount} - VLOOKUP(${aAmount},YEAR2024[%23ALL],1,TRUE)) * VLOOKUP(${aAmount},YEAR2024[%23ALL],2,True)) / ${pricaAmount}`
           //console.log(pricaAmount + aAmount);
           fetch(api+`?updateprica=true&id=${i+1}&numprica=${i}&numprica=${pricaAmount}&year=${firstYear + i-1}&prica=${pricaAmount}&addamount=${aAmount}&totalamount=${totalAmount}&tax=${taxperc}`)
     
           .then(res => res.text())
           .then(data=> {
             if (data === 'data Updateed!') {
-                readPrica();
+               readPrica();
                 }
           })
           
     } 
-    
+ 
  
 } 
 
@@ -270,12 +304,11 @@ const toKivua = function (customers_table) {
         new_window.close();
     }, 400);
 }
-/*
+
 kivua_btn.onclick = () => {
-    alert("kivua")
-    //toPDF(customers_table);
+    window.location.href = "kivua.html";
 }
-    */
+    
 
 // 4.Open Prica Calculator
 
