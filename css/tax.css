@@ -272,7 +272,7 @@ h1 {
 }
 
 .export__file .export__file-btn {
-    margin-left: -200px;
+    margin-left: 10px;
     align-items: center;
     justify-items: center;
     display:block;
@@ -296,7 +296,7 @@ h1 {
 }
 
 .export__file .export__file-options {
-    margin-right: 80px;
+    display: none;
     position: absolute;
     right: 0;
     
