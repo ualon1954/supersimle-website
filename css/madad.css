@@ -268,7 +268,7 @@ h1 {
 }
 
 .export__file .export__file-btn {
-    margin-left: 10px;
+    margin-left: -200px;
     align-items: center;
     justify-items: center;
     display: inline-block;
@@ -291,6 +291,7 @@ h1 {
 
 .export__file .export__file-options {
     position: absolute;
+    margin-right: 80px;
     right: 0;
     
     width: 12rem;
