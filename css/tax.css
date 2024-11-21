@@ -272,15 +272,18 @@ h1 {
 }
 
 .export__file .export__file-btn {
-    margin-left: 200px;
+    margin-left: 10px;
     align-items: center;
     justify-items: center;
-    display: inline-block;
+    display:inline-flex;
     width: 2rem;
     height: 2rem;
     background: #fff6 url(/images/hamburger-menu.png) center / 80% no-repeat;
     border-radius: 50%;
     transition: .2s ease-in-out;
+    margin-bottom: 5px;
+    direction: rtl;
+   
 }
 
 .export__file .export__file-btn:hover { 
@@ -348,6 +351,21 @@ h1 {
 .export__file .export__file-options img{
     width: 2rem;
     height: auto;
+}
+
+.input-radio {
+    display: inline-block;
+
+    margin-right: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+   
+}
+
+.input-radio label {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 @media screen and (max-width: 3000px) and (min-width: 750px) {
