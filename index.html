@@ -19,7 +19,7 @@
   <main class="main-container">
     
         <div class="container">
-          <section class="form_header" dir="ltr">
+          <section class="form_header" dir="rtl">
 
             <h1>מחשבונים</h1>
             
@@ -27,7 +27,7 @@
                 <label for="export-file" class="export__file-btn" title="Export File"></label>
                 <input type="checkbox" id="export-file">
                 <div class="export__file-options">
-                    <!--label>מחשבונים</label-->
+                    <label>מחשבונים</label>
                     <!--label for="export-file" id="toTax">מס הכנסה <img src="images/calculator.png" alt=""></label-->
                     <label for="export-file" id="toMadad">מדד לצרכן <img  src="images/madad.png" alt="" style="text-align: right;"></label>
                     <label for="export-file" id="toKivua">קיבוע זכויות <img src="images/calculator.png" alt=""></label>
@@ -41,6 +41,21 @@
             <br /><br />
             <h4>חישוב מס הכנסה</h4>
             <!-- AMOUNT  -->
+            <div class="input-radio">
+              <input type="radio" 
+                     id="month" 
+                     name="brand" 
+                     value="month" checked>
+              <label for="month">חודשי</label>
+            </div>
+      
+          <div class="input-radio">
+              <input type="radio" 
+                     id="year" 
+                     name="brand" 
+                     value="year">
+              <label for="year">שנתי</label>
+          </div>
             <div class="input-box">
               <label for="amount"><span style="color: red;">* </span>סכום הכנסה</label>
               <input type="text" placeholder="נא להזין סכום הכנסה" id="amount" />

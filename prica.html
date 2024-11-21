@@ -42,7 +42,7 @@
             <h4>פריסת מס</h4>
             <!-- SRART DATE  -->
             <div class="input-box">
-              <label for="month"></label><span style="color: red;font-weight: 600;">* </span>חודש פרישה</label>
+              <label for="month"><span style="color: red;font-weight: 600;">* </span>חודש פרישה</label>
               <select name="month" id="month">
                 <option value="" selected="selected"></option>
               </select>
@@ -55,10 +55,17 @@
               <span class="error month"></span>
             </div>
             <div class="input-box">
-              <label for="firstyear" ></label><span style="color: red;font-weight: 600;">* </span>שנת פריסה ראשונה</label>
+              <label for="firstyear" >
+                <span style="color: red;font-weight: 600;">* </span>שנת פריסה ראשונה</label>
               <select name="firstyear" id="firstyear">
                 <option value="" selected="selected"></option>
               </select>
+              <span class="success firstyear" dir="rtl" style="margin-top: 17px;">
+                <i class="fa-sharp fa-solid fa-circle-check"></i>
+              </span>
+              <br />
+              <!-- ERROR SPAN  -->
+              <span class="error firstyear"></span>
             </div>
             
             <div class="input-box">
@@ -99,6 +106,13 @@
               <select name="prica" id="prica">
                 <option value="" selected="selected"></option>
               </select>
+                <!-- SUCCESS SPAN  -->
+                <span class="success prica" dir="rtl" style="margin-top: 17px;">
+                  <i class="fa-sharp fa-solid fa-circle-check"></i>
+                </span>
+                <br />
+                <!-- ERROR SPAN  -->
+                <span class="error prica"></span>
             </div>
            
       
@@ -117,6 +131,15 @@
                     <th>סכום המקדמה</th>
                   </thead>
                   <tbody></tbody> 
+                  <tr>
+                    <td style="background-color: bisque;border-style: none;"></td>
+                    <td style="background-color: bisque;border-style: none;"></td>
+                    <td style="background-color: bisque;border-style: none;"></td>
+                    <td style="background-color: bisque;border-style: none;"></td>
+                    <td style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-weight: 600;background-color: yellow;">מס ממוצע</td>
+                    <td style="color:red;font-weight: 700; background-color: yellow;">26%</td>
+                    <td style="color:red;font-weight: 700;background-color: yellow;"></td>
+                  </tr>
                 </table>  
             </div>
             
