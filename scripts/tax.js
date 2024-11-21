@@ -11,8 +11,7 @@ let show_flag = 0;
 let monthly = document.getElementById("month").checked;
 
 
-
-   function updateData() {
+  function updateData() {
     taxmadr = '';
     taxshuli = '';
     lowmad = '';
@@ -129,6 +128,16 @@ function resetForm () {
     
 }
 
+function menutoggle () {
+    
+    if (document.getElementById("export-file").checked == true) {
+        document.querySelector(".export__file-options").style.display = "none";
+    }
+    else {
+        document.querySelector(".export__file-options").style.display = "block"; 
+    }
+}
+
 // 1.Open Tax Calculator
 
 const tax_btn = document.querySelector('#toTax');
@@ -172,9 +181,7 @@ const toMadad = function (customers_table) {
 }
 
 madad_btn.onclick = () => {
-    //alert("madad")
-    window.location.href = "madad.html";
-    //toPDF(customers_table);
+      window.location.href = "madad.html";  
 }
 
 // 2.Open Kivua Calculator
@@ -199,9 +206,8 @@ const toKivua = function (customers_table) {
 }
 
 kivua_btn.onclick = () => {
-   // alert("kivua")
-window.location.href = "kivua.html";
-}
+      window.location.href = "kivua.html";
+ }
 
 // 3.Open Prica Calculator
 

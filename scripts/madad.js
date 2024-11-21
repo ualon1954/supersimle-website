@@ -10,6 +10,16 @@ let tbody_rows = '';
 let show_flag = 0;
 let lamount = document.querySelector('label[for="tax"]');  //does nothing
 
+function menutoggle () {
+    
+    if (document.getElementById("export-file").checked == true) {
+        document.querySelector(".export__file-options").style.display = "none";
+    }
+    else {
+        document.querySelector(".export__file-options").style.display = "block"; 
+    }
+}
+
    function updateData() {
     let fromYear = new Date(form[1].value).getFullYear();
     let toYear = new Date(form[2].value).getFullYear();

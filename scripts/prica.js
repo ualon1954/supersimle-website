@@ -10,7 +10,15 @@ let tbody_rows = '';
 let show_flag = 0;
 let lamount = document.querySelector('label[for="tax"]');  //does nothing
 
-
+function menutoggle () {
+    
+    if (document.getElementById("export-file").checked == true) {
+        document.querySelector(".export__file-options").style.display = "none";
+    }
+    else {
+        document.querySelector(".export__file-options").style.display = "block"; 
+    }
+}
 
 //let aAmount = ''; 
 //let totalAmount = 0; 
