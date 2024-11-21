@@ -272,18 +272,17 @@ h1 {
 }
 
 .export__file .export__file-btn {
-    margin-left: 10px;
+    margin-left: -250px;
     align-items: center;
     justify-items: center;
-    display:inline-flex;
+    display:block;
     width: 2rem;
     height: 2rem;
     background: #fff6 url(/images/hamburger-menu.png) center / 80% no-repeat;
     border-radius: 50%;
     transition: .2s ease-in-out;
     margin-bottom: 5px;
-    direction: rtl;
-   
+       
 }
 
 .export__file .export__file-btn:hover { 
@@ -297,6 +296,7 @@ h1 {
 }
 
 .export__file .export__file-options {
+    margin-right: 250px;
     position: absolute;
     right: 0;
     
