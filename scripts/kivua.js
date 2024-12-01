@@ -1,6 +1,6 @@
 /* CRUD for contacts */
 
-let api = "https://script.google.com/macros/s/AKfycbwZQnt_PavalDGpNuDAOtK7E-ew3Hz3Oz9LNjOQmx7lcwu-0YId2FzRUHGCI1yHv8FB/exec";
+let api = "https://script.google.com/macros/s/AKfycbwzzJS0vbTVDdHxuT8s0xpTZcAbC8h_s8nBJMCI_k_YA6-R1qYzHCHSkt3xRWNK9Pqh/exec";
 let form = document.querySelector("form");
 console.log(form);
 let add = document.querySelector(".add");
@@ -200,7 +200,7 @@ const toTAX = function (customers_table) {
 
 tax_btn.onclick = () => {
     //alert("tax")
-    window.location.href = "index.html";
+    window.location.href = "tax.html";
     //toPDF(customers_table);
 }
 
