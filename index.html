@@ -1,135 +1,58 @@
-<html>
-
-<head>
-    <!--meta charset="UTF-8"-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>חישוב מס הכנסה</title>
-    <!--link rel="stylesheet" type="text/css" href="css/tax.css"-->
-    <!--link rel="stylesheet" type="text/css" href="css/crud.css"-->
-    <!--link rel="stylesheet" type="text/css" href="css/valid.css"-->
-    <link rel="stylesheet" type="text/css" href="css/tax.css">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <!-- Box icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font awesome link -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     />
-</head>
-
-<body dir="rtl">
-  <main class="main-container">
-    
-        <div class="container">
-          <section class="form_header" dir="rtl">
-
-            <h1>מחשבונים</h1>
-            
-            <div class="export__file">
-                <label for="export-file" class="export__file-btn" title="תפריט" onclick="menutoggle()"></label>
-                <input type="checkbox" id="export-file">
-                <div class="export__file-options">
-                    <label>מחשבונים</label>
-                    <!--label for="export-file" id="toTax">מס הכנסה <img src="images/calculator.png" alt=""></label-->
-                    <label for="export-file" id="toMadad">מדד לצרכן <img  src="images/madad.png" alt="" style="text-align: right;"></label>
-                    <label for="export-file" id="toKivua">קיבוע זכויות <img src="images/calculator.png" alt=""></label>
-                    <label for="export-file" id="toPrica">פריסת מס <img src="images/calculator.png" alt=""></label>
-                </div>
-               
-            </div>
-          </section> 
-          
-          <form name="TaxForm"  class="tax-form">
-            <br /><br />
-            <h4>חישוב מס הכנסה</h4>
-            <!-- AMOUNT  -->
-            <div class="input-radio">
-              <input type="radio" 
-                     id="month" 
-                     name="brand" 
-                     value="month" checked>
-              <label for="month">חודשי</label>
-            </div>
-      
-          <div class="input-radio">
-              <input type="radio" 
-                     id="year" 
-                     name="brand" 
-                     value="year">
-              <label for="year">שנתי</label>
-          </div>
-            <div class="input-box">
-              <label for="amount"><span style="color: red;">* </span>סכום הכנסה</label>
-              <input type="text" placeholder="נא להזין סכום הכנסה" id="amount" />
-              <!-- SUCCESS SPAN  -->
-              <span class="success amount" dir="rtl">
-                <i class="fa-sharp fa-solid fa-circle-check"></i>
-              </span>
-              <br />
-              <!-- ERROR SPAN  -->
-              <span class="error amount"></span>
-            </div>
-            <!-- REFINEMENT POINTS  -->
-            <div class="input-box">
-              <label for="rpoints">נקודות זיכוי</label>
-              <input type="rpoints" placeholder="נא להזין מספר נקודות זיכוי" class="rpoints" id="rpoints" />
-              <!-- SUCCESS SPAN  -->
-              <span class="success rpoints">
-                <i class="fa-sharp fa-solid fa-circle-check"></i>
-              </span>
-              <br />
-              <!-- ERROR SPAN  -->
-              <span class="error rpoints"></span>
-            </div>
-            <!-- PTOR AMOUNT  -->
-            <div class="input-box">
-              <label for="ptor">פטור נוסף</label>
-              <input type="text" placeholder="נא להזין פטור נוסף" class="ptor" id="ptor" />
-              <!-- SUCCESS SPAN  -->
-              <span class="success ptor" dir="rtl">
-                <i class="fa-sharp fa-solid fa-circle-check"></i>
-              </span>
-              <br />
-              <!-- ERROR SPAN  -->
-              <span class="error ptor"></span>
-            </div>
-            <div class="result-container" aria-disabled="true">
-                <h3>תוצאת חישוב</h3>
-                <br />
-                <div class="result-box">
-                    <label for="tax" id="ltax">מס הכנסה:</label>
-                    <input type="text" id="tax" disabled style="color: red ;font-weight: 600;"/>
-                </div>
-                <div class="result-box">
-                    <label for="points">שווי נקודות זיכוי:</label>
-                    <input type="text" id="points" disabled style="color: green ;font-weight: 600;"/>
-                </div>
-                <div class="result-box">
-                    <label for="calctax">מס מחושב:</label>
-                    <input type="text" id="calctax" disabled style="color: red ;font-weight: 600;"/>
-                </div>
-                <div class="result-box">
-                    <label for="shuli">מס שולי:</label>
-                    <input type="text" id="shuli" disabled style="color:red;font-weight: 600;"/>
-                </div>
-                <div class="result-box">
-                    <label for="neto">נטו לתשלום:</label>
-                    <input type="text" id="neto" disabled style="color: green ;font-weight: 700;"/>
-                </div>
-            </div>
-            <!-- SUBMIT BTN  -->
-            <div class="btn">
-              <button type="update" class="update" id="update">חישוב</button>
-              <button type="reset" class="reset" id="reset" onclick="resetForm()" >ניקוי</button>
-            </div>
-            
-          </form>
+    <!-- css link -->
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body dir ="rtl">
+    <div class="container">
+      <form autocomplete="off" class="loginForm">
+        <h1>מחשבונים</h1>
+        <h2>כניסה למערכת</h2>
+        <!-- USERNAME  -->
+        <div class="input-box">
+          <input type="text" placeholder="נא להזין קוד משתמש" id="user-name"/>
+          <!-- SUCCESS SPAN  -->
+          <span class="success username">
+            <i class="fa-sharp fa-solid fa-circle-check"></i>
+          </span>
+          <br />
+          <!-- ERROR SPAN  -->
+          <span class="error username"></span>
         </div>
-      </main>
-       
-
-    <!--script src="scripts/crud.js"--></script>
-    <!--script src="scripts/script1.js"></script-->
-    <script src="scripts/tax.js"></script>
-    
-    <script src="scripts/validation_tax.js"></script>
-
-</body>
+        <!-- PASSWORD  -->
+        <div class="input-box">
+          <input type="password" placeholder="נא להזין סיסמה" id="password" />
+          <!-- EYE SPAN  -->
+          <span class="eye">
+            <i class="fa-regular fa-eye-slash"></i>
+          </span>
+          <br />
+          <!-- ERROR SPAN  -->
+          <span class="error password"></span>
+        </div>
+        <!-- SUBMIT BTN  -->
+        <div class="btn">
+          <button type="submit" id="btn">כניסה</button>
+        </div>
+      </form>
+    </div>
+    <!-- SCRIPT JS LINKS  -->
+    <script src="scripts/login.js"></script>
+    <script src="scripts/validation_login.js"></script>
+  </body>
+</html>
