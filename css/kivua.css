@@ -49,6 +49,15 @@ h1 {
    color: white;
    font-family: sans-serif;
 }
+p a {
+    background-color: #fff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.text-center {
+margin-right: 40px;
+color: rgb(0, 170, 255);
+background-color: #fff;
+}
 .container form {
    
     width: 350px;
