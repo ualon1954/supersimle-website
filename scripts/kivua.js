@@ -1,6 +1,6 @@
 /* CRUD for contacts */
 
-let api = "https://script.google.com/macros/s/AKfycbwzzJS0vbTVDdHxuT8s0xpTZcAbC8h_s8nBJMCI_k_YA6-R1qYzHCHSkt3xRWNK9Pqh/exec";
+let api = "https://script.google.com/macros/s/AKfycbzksZvOnvmmTHnb4Zf87b2W_AJu8LksAwqkdpUL3eNGgOOZTLZx0EAsHPGV4WatbNE2/exec";
 let form = document.querySelector("form");
 console.log(form);
 let add = document.querySelector(".add");
