@@ -19,6 +19,7 @@ function home () {
 
 function login () {
     //alert(form[1].value);
+    document.querySelector(".submit").innerHTML = "מתחבר...";
     fetch(api+`?login=true&username=${form[0].value}&passwd=${form[1].value}`)
     
           .then(res => res.text())
@@ -32,8 +33,9 @@ function login () {
                 }
             else {
                 
-                alert(data);;
-            }    
+                alert(data);
+            }  
+            document.querySelector(".submit").innerHTML = "כניסה";
           })
 
 }
