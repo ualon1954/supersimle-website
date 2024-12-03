@@ -101,6 +101,7 @@
     font-family: sans-serif;
     font-weight: 500;
     display: none;
+    user-select: none;
 }
 
 .container form .input-box .error.show {
@@ -156,10 +157,12 @@ h1 {
     border-style: solid;
     background-color: blue;
     color: white;
+    user-select: none;
 
 }   
 
 h2 {
     font-size: 14px;
     margin-top: 25px;
+    user-select: none;
 }
