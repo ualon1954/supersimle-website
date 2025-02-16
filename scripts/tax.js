@@ -1,6 +1,6 @@
 /* CRUD for contacts */
 
-let api = "https://script.google.com/macros/s/AKfycbzksZvOnvmmTHnb4Zf87b2W_AJu8LksAwqkdpUL3eNGgOOZTLZx0EAsHPGV4WatbNE2/exec";
+let api = "https://script.google.com/macros/s/AKfycbxQzE-uAEnN50x3fsU_3RUyVfWDl_n9LKf_D-K5Jt-8UeBIyIKNJGVkkMqn1G3n9ruK/exec";
 let form = document.querySelector("form");
 console.log(form);
 let add = document.querySelector(".add");
@@ -9,7 +9,8 @@ let tbody = document.querySelector("tbody");
 let tbody_rows = '';
 let show_flag = 0;
 let monthly = document.getElementById("month").checked;
-
+const userName = localStorage.getItem("username");;
+//console.log(userName);
 
   function updateData() {
     taxmadr = '';
@@ -17,7 +18,12 @@ let monthly = document.getElementById("month").checked;
     lowmad = '';
     if (document.getElementById("month").checked == true) {
         taxmadr = `=VLOOKUP(${form[2].value},M_2024[%23ALL],3)`;
-        taxshuli = `=VLOOKUP((${form[2].value} - ${form[4].value}),M_2024[%23ALL],2)`;
+        if (form[4].value === "" ) {
+             taxshuli = `=VLOOKUP(${form[2].value},M_2024[%23ALL],2)`;
+         }
+         else{
+            taxshuli = `=VLOOKUP((${form[2].value} - ${form[4].value}),M_2024[%23ALL],2)`;
+         }
         lowmad = `=VLOOKUP(${form[2].value} ,M_2024[%23ALL],1)`;
    }
     else {
