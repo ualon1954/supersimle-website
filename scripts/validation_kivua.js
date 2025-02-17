@@ -200,8 +200,8 @@ form1.addEventListener("submit", (e) => {
   if (isValid) {
     //alert("addData");
     updateData();
-    updateDataMadad();
-    calculateKivua();
+    //updateDataMadad();
+    //calculateKivua();
     
     //setTimeout(() => {
     //  console.log("Delayed for 2 second.");

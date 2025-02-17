@@ -114,7 +114,7 @@ form1.addEventListener("submit", (e) => {
   if (isValid) {
     //alert("addData");
     updateData();
-    calculateMadad();
+    //calculateMadad();
     //updateData();
     //addData();
     //show_flag = 0;

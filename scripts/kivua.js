@@ -31,7 +31,7 @@ function menutoggle () {
      //document.querySelector(".update").innerHTML = "חישוב"
         //document.querySelector(".result-container").style.display = "block";
     })
-   
+    updateDataMadad();
 } 
 
 function updateDataMadad() {
@@ -93,7 +93,7 @@ function updateDataMadad() {
     .then(data=> {
        //document.querySelector(".update").innerHTML = "חישוב"
     })
-  
+    calculateKivua();
 } 
 
 function calculateKivua() {

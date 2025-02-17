@@ -47,6 +47,8 @@ const userName = localStorage.getItem("username");;
        //document.querySelector(".contact-form").style.display = "none"; 
        
     })
+
+    calculateTax();
     
 } 
 

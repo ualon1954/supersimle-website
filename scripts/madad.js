@@ -94,6 +94,7 @@ function menutoggle () {
         document.querySelector(".update").innerHTML = "חישוב"
         document.querySelector(".result-container").style.display = "block";
     })
+    calculateMadad();
     
 } 
 

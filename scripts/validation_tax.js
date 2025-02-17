@@ -128,7 +128,7 @@ form1.addEventListener("submit", (e) => {
   if (isValid) {
     //alert("addData");
     updateData();
-    calculateTax();
+    //calculateTax();
     //updateData();
     //addData();
     //show_flag = 0;
